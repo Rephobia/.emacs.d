@@ -1,0 +1,6 @@
+/*
+!*.el
+!.gitignore
+ 
+*.yas-compiled-*
+.mc-lists.el
