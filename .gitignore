@@ -2,5 +2,6 @@
 !*.el
 !.gitignore
  
+!*.md
 *.yas-compiled-*
 .mc-lists.el
