@@ -10,7 +10,7 @@
   (:map ivy-minibuffer-map
 	("RET" . ivy-alt-done)
 	("TAB" . ivy-partial)
-	([remap linhurdos-scroll-half-page-down]. ivy-scroll-down-command)
+	([remap linhurdos-scroll-half-page-down] . ivy-scroll-down-command)
 	([remap linhurdos-scroll-half-page-up] . ivy-scroll-up-command)
 	)
   

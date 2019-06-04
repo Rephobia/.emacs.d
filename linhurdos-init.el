@@ -132,6 +132,7 @@
 (load "~/.emacs.d/linhurdos-window.el")
 (load "~/.emacs.d/linhurdos-expand-region.el")
 (load "~/.emacs.d/linhurdos-dired.el")
+(load "~/.emacs.d/linhurdos-shell.el")
 
 ;; text
 (load "~/.emacs.d/linhurdos-text.el")

@@ -19,6 +19,7 @@
 	("C-c s S" . counsel-git-grep)
 	("C-c s a" . projectile-ag)
 	("C-c s g" . projectile-grep)
+	("C-c x x" . linhurdos-run-lxterminal)
 	)
   :init
   
@@ -26,8 +27,13 @@
     :ensure t)
  
   (projectile-mode +1)
+
+  (defun linhurdos-run-lxterminal ()
+    (interactive)
+    (start-process-shell-command "lxterminal" nil (concat "lxterminal --working-directory="
+							  (projectile-project-root)))
+    )
   
   :config
-  (setq projectile-completion-system 'ivy)
-  
+  (setq projectile-completion-system 'ivy)  
   )
