@@ -155,8 +155,14 @@
 ;; lang C++
 (load "~/.emacs.d/linhurdos-ccls.el")
 
+;; lang javascript
+(load "~/.emacs.d/linhurdos-js2-mode.el")
+
 ;; theme
 (load "~/.emacs.d/linhurdos-theme.el")
+
+;; other
+(load "~/.emacs.d/linhurdos-orgmode.el")
 
 ;; RUS Hotkey
 (cfg:reverse-input-method 'russian-computer)

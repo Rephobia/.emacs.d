@@ -4,6 +4,6 @@
 (use-package smart-tabs-mode
   :ensure t
   :init
-  (smart-tabs-insinuate 'c 'c++ 'java)
+  (smart-tabs-insinuate 'c 'c++ 'java 'javascript)
   
   )

@@ -96,6 +96,8 @@
    `(company-preview-common			((t (:background ,black-0 :underline t))))
    `(company-scrollbar-fg			((t (:background ,black-0))))
    `(company-scrollbar-bg			((t (:background ,gray-0))))
+
+   `(js2-function-param ((t (:foreground ,tango-orange))))
    )
   )
 
