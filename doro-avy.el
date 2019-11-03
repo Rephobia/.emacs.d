@@ -5,7 +5,7 @@
   :ensure t
   
   :bind
-  (:map tdoro-mode-map
+  (:map doro-mode-map
 	("M-1" . avy-goto-line)
 	("M-2" . avy-goto-char-timer)
 	("M-!" . doro-avy-mark-line)
