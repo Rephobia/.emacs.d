@@ -1,5 +1,5 @@
 
-(use-package linhurdos-shell
+(use-package doro-shell
   :bind
   (:map minibuffer-local-shell-command-map
 	("M-p" . previous-history-element)

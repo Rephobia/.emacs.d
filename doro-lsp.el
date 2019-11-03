@@ -7,7 +7,7 @@
   :delight
   
   :bind
-  (:map linhurdos-mode-map
+  (:map doro-mode-map
 	("M-f d" . xref-find-definitions-other-window)
 	)
   

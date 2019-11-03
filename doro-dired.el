@@ -6,7 +6,7 @@
   (put 'set-goal-column 'disabled nil)
   
   :bind
-  (:map linhurdos-mode-map
+  (:map doro-mode-map
 	("C-x C-d" . dired-jump)
 	)
   

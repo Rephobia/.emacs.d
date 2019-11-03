@@ -1,4 +1,4 @@
-(deftheme linhurdos)
+(deftheme doomer-roman)
 
 (menu-bar-mode -1)
 (tool-bar-mode -1)
@@ -45,7 +45,7 @@
       )
 
   (custom-theme-set-faces
-   'linhurdos
+   'doomer-roman
    `(default ((t (:background ,tango-aluminium :foreground ,gray-1))))
    `(fringe  ((t (:background ,tango-aluminium))))
    `(hl-line ((t (:background ,black-1))))
@@ -123,4 +123,4 @@
 	   (overwrite-mode " Ov" t)
 	   ))
 
-(provide-theme 'linhurdos)
+(provide-theme 'doomer-roman)

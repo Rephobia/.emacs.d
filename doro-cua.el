@@ -4,7 +4,7 @@
 (use-package undo-tree
   :ensure t
   :bind
-  (:map linhurdos-mode-map
+  (:map doro-mode-map
 	("C-z"   . undo-tree-undo)
 	("C-v"   . yank)
 	("C-S-v" . yank-pop)
@@ -14,7 +14,7 @@
 
   :init
   
-  (defun linhurdos-clear-kill-ring ()
+  (defun doro-clear-kill-ring ()
     (interactive)
     (setq kill-ring 'nil)
     (message "kill ring cleaned"))
@@ -31,53 +31,53 @@
   )
 
 
-(use-package linhurdos-cua
+(use-package doro-cua
   :bind
-  (:map linhurdos-mode-map
-	("C-w"   . linhurdos-line-or-region-kill)
-	("C-e"   . linhurdos-line-or-region-copy)
-	("C-d"   . linhurdos-line-or-region-delete)
+  (:map doro-mode-map
+	("C-w"   . doro-line-or-region-kill)
+	("C-e"   . doro-line-or-region-copy)
+	("C-d"   . doro-line-or-region-delete)
 
-	("C-S-w" . linhurdos-line-above-kill)
-	("C-S-d" . linhurdos-line-above-delete)
+	("C-S-w" . doro-line-above-kill)
+	("C-S-d" . doro-line-above-delete)
 
-	("C-M-w" . linhurdos-line-below-kill)
-	("C-M-d" . linhurdos-line-below-delete)
+	("C-M-w" . doro-line-below-kill)
+	("C-M-d" . doro-line-below-delete)
 	)
 
   :init
 
-  (defun linhurdos-line-of-region (func)
+  (defun doro-line-of-region (func)
     (if (not (use-region-p))
 	(funcall func (line-beginning-position) (line-end-position))
       (funcall func (region-beginning) (region-end))))
 
-  (defun linhurdos-line-or-region-kill ()
+  (defun doro-line-or-region-kill ()
     (interactive)
-    (linhurdos-line-of-region #'kill-region))
+    (doro-line-of-region #'kill-region))
 
-  (defun linhurdos-line-or-region-delete ()
+  (defun doro-line-or-region-delete ()
     (interactive)
-    (linhurdos-line-of-region #'delete-region))
+    (doro-line-of-region #'delete-region))
 
-  (defun linhurdos-line-or-region-copy ()
+  (defun doro-line-or-region-copy ()
     (interactive)
-    (linhurdos-line-of-region #'kill-ring-save))
+    (doro-line-of-region #'kill-ring-save))
 
-  (defun linhurdos-line-above-kill ()
+  (defun doro-line-above-kill ()
     (interactive)
     (save-excursion (move-beginning-of-line nil) (kill-line -1)))
 
-  (defun linhurdos-line-above-delete ()
+  (defun doro-line-above-delete ()
     (interactive)
     (save-excursion (previous-line) (delete-region (line-beginning-position) (line-end-position))
 		    (delete-char 1)))
 
-  (defun linhurdos-line-below-kill ()
+  (defun doro-line-below-kill ()
     (interactive)
     (save-excursion (next-line) (move-beginning-of-line nil) (kill-whole-line)))
 
-  (defun linhurdos-line-below-delete ()
+  (defun doro-line-below-delete ()
     (interactive)
     (save-excursion (next-line) (delete-region (line-beginning-position) (line-end-position))
 		    (delete-char 1)))

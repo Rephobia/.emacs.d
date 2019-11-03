@@ -1,11 +1,11 @@
 ;; https://github.com/abo-abo/ace-window
 
 
-(use-package linhurdos-window
+(use-package doro-window
   :bind
-  (:map linhurdos-mode-map
-	("C-q" . linhurdos-scroll-half-page-down)
-	("C-a" . linhurdos-scroll-half-page-up)
+  (:map doro-mode-map
+	("C-q" . doro-scroll-half-page-down)
+	("C-a" . doro-scroll-half-page-up)
 	("C-S-q". recenter-top-bottom)
 	("C-S-a". recenter)
 
@@ -20,12 +20,12 @@
 
   :init
 
-  (defun linhurdos-scroll-half-page-down ()
+  (defun doro-scroll-half-page-down ()
     (interactive)
     "scroll down half the page"
     (scroll-down (- (/ (window-body-height) 2) 1)))
 
-  (defun linhurdos-scroll-half-page-up ()
+  (defun doro-scroll-half-page-up ()
     (interactive)
     "scroll up half the page"
     (scroll-up (- (/ (window-body-height) 2) 1)))
@@ -37,7 +37,7 @@
   :ensure t
   
   :bind
-  (:map linhurdos-mode-map
+  (:map doro-mode-map
 	("M-w" . ace-window)
 	)
 
@@ -53,23 +53,23 @@
 
 	  (?k kill-this-buffer)
 	  (?K kill-buffer-and-window)
-	  (?c linhurdos-kill-compilation-buf)
+	  (?c doro-kill-compilation-buf)
 
 	  (?s aw-swap-window "Ace - Swap Window")
-	  (?1 linhurdos-split-focus-window-v)
-	  (?2 linhurdos-split-focus-window-h)
+	  (?1 doro-split-focus-window-v)
+	  (?2 doro-split-focus-window-h)
 	  (?b balance-windows)
 	  ))
 
-  (defun linhurdos-split-focus-window-h ()
+  (defun doro-split-focus-window-h ()
     (split-window-horizontally)
     (other-window 1))
 
-  (defun linhurdos-split-focus-window-v ()
+  (defun doro-split-focus-window-v ()
     (split-window-vertically)
     (other-window 1))
 
-  (defun linhurdos-kill-compilation-buf ()
+  (defun doro-kill-compilation-buf ()
     (kill-buffer "*compilation*"))
 
   )

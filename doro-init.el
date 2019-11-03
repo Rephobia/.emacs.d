@@ -105,64 +105,64 @@
 ;; user mode
 ;; ============================================================================
 
-(defvar linhurdos-mode-map (make-sparse-keymap)
-  "linhurdos-mode editing commands key bindings")
+(defvar doro-mode-map (make-sparse-keymap)
+  "doro-mode editing commands key bindings")
 
-(define-minor-mode linhurdos-mode
-  "linhurdos minor mode"
+(define-minor-mode doro-mode
+  "doro minor mode"
   :init-value t
-  linhurdos-mode-map)
+  doro-mode-map)
 
-(defun turn-on-linhurdos-mode ()
+(defun turn-on-doro-mode ()
   (interactive)
-  (linhurdos-mode t))
+  (doro-mode t))
 
-(defun turn-off-linhurdos-mode ()
+(defun turn-off-doro-mode ()
   (interactive)
-  (linhurdos-mode -1))
+  (doro-mode -1))
 
 ;; Load options
 ;; ============================================================================
 
 ;; basic
-(load "~/.emacs.d/linhurdos-basic-keys.el")
-(load "~/.emacs.d/linhurdos-cua.el")
-(load "~/.emacs.d/linhurdos-avy.el")
-(load "~/.emacs.d/linhurdos-minibuffer.el")
-(load "~/.emacs.d/linhurdos-window.el")
-(load "~/.emacs.d/linhurdos-expand-region.el")
-(load "~/.emacs.d/linhurdos-dired.el")
-(load "~/.emacs.d/linhurdos-shell.el")
+(load "~/.emacs.d/doro-basic-keys.el")
+(load "~/.emacs.d/doro-cua.el")
+(load "~/.emacs.d/doro-avy.el")
+(load "~/.emacs.d/doro-minibuffer.el")
+(load "~/.emacs.d/doro-window.el")
+(load "~/.emacs.d/doro-expand-region.el")
+(load "~/.emacs.d/doro-dired.el")
+(load "~/.emacs.d/doro-shell.el")
 
 ;; text
-(load "~/.emacs.d/linhurdos-text.el")
-(load "~/.emacs.d/linhurdos-comment.el")
-(load "~/.emacs.d/linhurdos-yasnippet.el")
-(load "~/.emacs.d/linhurdos-register.el")
-(load "~/.emacs.d/linhurdos-iedit.el") 
-(load "~/.emacs.d/linhurdos-multiple-cursors.el")
-(load "~/.emacs.d/linhurdos-drag-stuff.el")
+(load "~/.emacs.d/doro-text.el")
+(load "~/.emacs.d/doro-comment.el")
+(load "~/.emacs.d/doro-yasnippet.el")
+(load "~/.emacs.d/doro-register.el")
+(load "~/.emacs.d/doro-iedit.el") 
+(load "~/.emacs.d/doro-multiple-cursors.el")
+(load "~/.emacs.d/doro-drag-stuff.el")
 
 ;; lang
-(load "~/.emacs.d/linhurdos-indent.el")
-(load "~/.emacs.d/linhurdos-company.el")
-(load "~/.emacs.d/linhurdos-lsp.el")
-(load "~/.emacs.d/linhurdos-ag.el")
-(load "~/.emacs.d/linhurdos-dumb-jump.el")
-(load "~/.emacs.d/linhurdos-projectile.el")
-(load "~/.emacs.d/linhurdos-wgrep.el")
+(load "~/.emacs.d/doro-indent.el")
+(load "~/.emacs.d/doro-company.el")
+(load "~/.emacs.d/doro-lsp.el")
+(load "~/.emacs.d/doro-ag.el")
+(load "~/.emacs.d/doro-dumb-jump.el")
+(load "~/.emacs.d/doro-projectile.el")
+(load "~/.emacs.d/doro-wgrep.el")
 
 ;; lang C++
-(load "~/.emacs.d/linhurdos-ccls.el")
+(load "~/.emacs.d/doro-ccls.el")
 
 ;; lang javascript
-(load "~/.emacs.d/linhurdos-js2-mode.el")
+(load "~/.emacs.d/doro-js2-mode.el")
 
 ;; theme
-(load "~/.emacs.d/linhurdos-theme.el")
+(load "~/.emacs.d/doro-theme.el")
 
 ;; other
-(load "~/.emacs.d/linhurdos-orgmode.el")
+(load "~/.emacs.d/doro-orgmode.el")
 
 ;; RUS Hotkey
 (cfg:reverse-input-method 'russian-computer)

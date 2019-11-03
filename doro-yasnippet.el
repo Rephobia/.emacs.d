@@ -17,7 +17,7 @@
   (add-hook 'prog-mode-hook #'yas-minor-mode)
 
   :config
-  (add-to-list 'yas-snippet-dirs "~/.emacs.d/linhurdos-snippets/") ;; always before (yas-reload-all)
+  (add-to-list 'yas-snippet-dirs "~/.emacs.d/doro-snippets/") ;; always before (yas-reload-all)
   (yas-reload-all)
   (define-key yas-minor-mode-map [(tab)] nil)
   (define-key yas-minor-mode-map (kbd "TAB") nil)

@@ -6,7 +6,7 @@
   :after ag
   
   :bind
-  (:map linhurdos-mode-map
+  (:map doro-mode-map
 	("C-x w w" . wgrep-change-to-wgrep-mode)
 	("C-x w k" . wgrep-abort-changes)
 	)
