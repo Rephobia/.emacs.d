@@ -125,44 +125,44 @@
 ;; ============================================================================
 
 ;; basic
-(load "~/.emacs.d/doro-basic-keys.el")
-(load "~/.emacs.d/doro-cua.el")
-(load "~/.emacs.d/doro-avy.el")
-(load "~/.emacs.d/doro-minibuffer.el")
-(load "~/.emacs.d/doro-window.el")
-(load "~/.emacs.d/doro-expand-region.el")
-(load "~/.emacs.d/doro-dired.el")
-(load "~/.emacs.d/doro-shell.el")
+(load "~/.emacs.d/doro-basic-keys")
+(load "~/.emacs.d/doro-cua")
+(load "~/.emacs.d/doro-avy")
+(load "~/.emacs.d/doro-minibuffer")
+(load "~/.emacs.d/doro-window")
+(load "~/.emacs.d/doro-expand-region")
+(load "~/.emacs.d/doro-dired")
+(load "~/.emacs.d/doro-shell")
 
 ;; text
-(load "~/.emacs.d/doro-text.el")
-(load "~/.emacs.d/doro-comment.el")
-(load "~/.emacs.d/doro-yasnippet.el")
-(load "~/.emacs.d/doro-register.el")
-(load "~/.emacs.d/doro-iedit.el") 
-(load "~/.emacs.d/doro-multiple-cursors.el")
-(load "~/.emacs.d/doro-drag-stuff.el")
+(load "~/.emacs.d/doro-text")
+(load "~/.emacs.d/doro-comment")
+(load "~/.emacs.d/doro-yasnippet")
+(load "~/.emacs.d/doro-register")
+(load "~/.emacs.d/doro-iedit") 
+(load "~/.emacs.d/doro-multiple-cursors")
+(load "~/.emacs.d/doro-drag-stuff")
 
 ;; lang
-(load "~/.emacs.d/doro-indent.el")
-(load "~/.emacs.d/doro-company.el")
-(load "~/.emacs.d/doro-lsp.el")
-(load "~/.emacs.d/doro-ag.el")
-(load "~/.emacs.d/doro-dumb-jump.el")
-(load "~/.emacs.d/doro-projectile.el")
-(load "~/.emacs.d/doro-wgrep.el")
+(load "~/.emacs.d/doro-indent")
+(load "~/.emacs.d/doro-company")
+(load "~/.emacs.d/doro-lsp")
+(load "~/.emacs.d/doro-ag")
+(load "~/.emacs.d/doro-dumb-jump")
+(load "~/.emacs.d/doro-projectile")
+(load "~/.emacs.d/doro-wgrep")
 
 ;; lang C++
-(load "~/.emacs.d/doro-ccls.el")
+(load "~/.emacs.d/doro-ccls")
 
 ;; lang javascript
-(load "~/.emacs.d/doro-js2-mode.el")
+(load "~/.emacs.d/doro-js2-mode")
 
 ;; theme
-(load "~/.emacs.d/doro-theme.el")
+(load "~/.emacs.d/doro-theme")
 
 ;; other
-(load "~/.emacs.d/doro-orgmode.el")
+(load "~/.emacs.d/doro-orgmode")
 
 ;; RUS Hotkey
 (cfg:reverse-input-method 'russian-computer)
