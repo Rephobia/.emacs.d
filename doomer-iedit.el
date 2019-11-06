@@ -5,7 +5,7 @@
   :ensure t
   
   :bind
-  (:map doro-mode-map
+  (:map doomer-mode-map
 	("M-'" . iedit-mode)
 	("M-\"" . (lambda () "iedit local" (interactive) (iedit-mode 0)))
 	)

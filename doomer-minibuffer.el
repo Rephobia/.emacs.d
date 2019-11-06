@@ -3,15 +3,15 @@
 (use-package ivy
   :ensure t
   :bind
-  (:map doro-mode-map
+  (:map doomer-mode-map
 	("C-s" . swiper)
 	("C-x C-b" . ivy-switch-buffer)
 	)
   (:map ivy-minibuffer-map
 	("RET" . ivy-alt-done)
 	("TAB" . ivy-partial)
-	([remap doro-scroll-half-page-down] . ivy-scroll-down-command)
-	([remap doro-scroll-half-page-up] . ivy-scroll-up-command)
+	([remap doomer-scroll-half-page-down] . ivy-scroll-down-command)
+	([remap doomer-scroll-half-page-up] . ivy-scroll-up-command)
 	)
   
   :config
@@ -38,7 +38,7 @@
   :after (smex)
   
   :bind
-  (:map doro-mode-map
+  (:map doomer-mode-map
 	("C-x C-f" . counsel-find-file)
 	("M-x" . counsel-M-x)
 	("C-x C-v" . counsel-yank-pop)

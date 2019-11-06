@@ -5,7 +5,7 @@
   :ensure t
     
   :bind
-  (:map doro-mode-map
+  (:map doomer-mode-map
 	("<C-i>" . drag-stuff-up)
 	("C-k" . drag-stuff-down)
 	("C-j" . drag-stuff-left)

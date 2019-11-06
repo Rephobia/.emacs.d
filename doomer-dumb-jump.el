@@ -4,7 +4,7 @@
 (use-package dumb-jump
   :ensure t
   :bind
-  (:map doro-mode-map
+  (:map doomer-mode-map
 	("M-d l" . goto-line)
 	("M-d d" . dumb-jump-go)
 	("M-d b" . dumb-jump-back)

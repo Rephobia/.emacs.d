@@ -6,7 +6,7 @@
   :after ag
   
   :bind
-  (:map doro-mode-map
+  (:map doomer-mode-map
 	("C-x w w" . wgrep-change-to-wgrep-mode)
 	("C-x w k" . wgrep-abort-changes)
 	)

@@ -4,7 +4,7 @@
 (use-package undo-tree
   :ensure t
   :bind
-  (:map doro-mode-map
+  (:map doomer-mode-map
 	("C-z"   . undo-tree-undo)
 	("C-v"   . yank)
 	("C-S-v" . yank-pop)
@@ -14,7 +14,7 @@
 
   :init
   
-  (defun doro-clear-kill-ring ()
+  (defun doomer-clear-kill-ring ()
     (interactive)
     (setq kill-ring 'nil)
     (message "kill ring cleaned"))
@@ -31,53 +31,53 @@
   )
 
 
-(use-package doro-cua
+(use-package doomer-cua
   :bind
-  (:map doro-mode-map
-	("C-w"   . doro-line-or-region-kill)
-	("C-e"   . doro-line-or-region-copy)
-	("C-d"   . doro-line-or-region-delete)
+  (:map doomer-mode-map
+	("C-w"   . doomer-line-or-region-kill)
+	("C-e"   . doomer-line-or-region-copy)
+	("C-d"   . doomer-line-or-region-delete)
 
-	("C-S-w" . doro-line-above-kill)
-	("C-S-d" . doro-line-above-delete)
+	("C-S-w" . doomer-line-above-kill)
+	("C-S-d" . doomer-line-above-delete)
 
-	("C-M-w" . doro-line-below-kill)
-	("C-M-d" . doro-line-below-delete)
+	("C-M-w" . doomer-line-below-kill)
+	("C-M-d" . doomer-line-below-delete)
 	)
 
   :init
 
-  (defun doro-line-of-region (func)
+  (defun doomer-line-of-region (func)
     (if (not (use-region-p))
 	(funcall func (line-beginning-position) (line-end-position))
       (funcall func (region-beginning) (region-end))))
 
-  (defun doro-line-or-region-kill ()
+  (defun doomer-line-or-region-kill ()
     (interactive)
-    (doro-line-of-region #'kill-region))
+    (doomer-line-of-region #'kill-region))
 
-  (defun doro-line-or-region-delete ()
+  (defun doomer-line-or-region-delete ()
     (interactive)
-    (doro-line-of-region #'delete-region))
+    (doomer-line-of-region #'delete-region))
 
-  (defun doro-line-or-region-copy ()
+  (defun doomer-line-or-region-copy ()
     (interactive)
-    (doro-line-of-region #'kill-ring-save))
+    (doomer-line-of-region #'kill-ring-save))
 
-  (defun doro-line-above-kill ()
+  (defun doomer-line-above-kill ()
     (interactive)
     (save-excursion (move-beginning-of-line nil) (kill-line -1)))
 
-  (defun doro-line-above-delete ()
+  (defun doomer-line-above-delete ()
     (interactive)
     (save-excursion (previous-line) (delete-region (line-beginning-position) (line-end-position))
 		    (delete-char 1)))
 
-  (defun doro-line-below-kill ()
+  (defun doomer-line-below-kill ()
     (interactive)
     (save-excursion (next-line) (move-beginning-of-line nil) (kill-whole-line)))
 
-  (defun doro-line-below-delete ()
+  (defun doomer-line-below-delete ()
     (interactive)
     (save-excursion (next-line) (delete-region (line-beginning-position) (line-end-position))
 		    (delete-char 1)))

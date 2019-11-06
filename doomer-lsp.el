@@ -7,7 +7,7 @@
   :delight
   
   :bind
-  (:map doro-mode-map
+  (:map doomer-mode-map
 	("M-f d" . xref-find-definitions-other-window)
 	)
   

@@ -19,7 +19,7 @@
 	("C-c s S" . counsel-git-grep)
 	("C-c s a" . projectile-ag)
 	("C-c s g" . projectile-grep)
-	("C-c x x" . doro-run-lxterminal)
+	("C-c x x" . doomer-run-lxterminal)
 	)
   :init
   
@@ -28,7 +28,7 @@
  
   (projectile-mode +1)
 
-  (defun doro-run-lxterminal ()
+  (defun doomer-run-lxterminal ()
     (interactive)
     (start-process-shell-command "lxterminal" nil (concat "lxterminal --working-directory="
 							  (projectile-project-root)))

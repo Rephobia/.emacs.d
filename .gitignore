@@ -1,7 +1,7 @@
 /*
 !*.el
 !.gitignore
-!doro-snippets/
+!doomer-snippets/
 !*.md
 *.yas-compiled-*
 .mc-lists.el

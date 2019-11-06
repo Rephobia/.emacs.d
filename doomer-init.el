@@ -105,64 +105,64 @@
 ;; user mode
 ;; ============================================================================
 
-(defvar doro-mode-map (make-sparse-keymap)
-  "doro-mode editing commands key bindings")
+(defvar doomer-mode-map (make-sparse-keymap)
+  "doomer-mode editing commands key bindings")
 
-(define-minor-mode doro-mode
+(define-minor-mode doomer-mode
   "doro minor mode"
   :init-value t
-  doro-mode-map)
+  doomer-mode-map)
 
-(defun turn-on-doro-mode ()
+(defun turn-on-doomer-mode ()
   (interactive)
-  (doro-mode t))
+  (doomer-mode t))
 
-(defun turn-off-doro-mode ()
+(defun turn-off-doomer-mode ()
   (interactive)
-  (doro-mode -1))
+  (doomer-mode -1))
 
 ;; Load options
 ;; ============================================================================
 
 ;; basic
-(load "~/.emacs.d/doro-basic-keys")
-(load "~/.emacs.d/doro-cua")
-(load "~/.emacs.d/doro-avy")
-(load "~/.emacs.d/doro-minibuffer")
-(load "~/.emacs.d/doro-window")
-(load "~/.emacs.d/doro-expand-region")
-(load "~/.emacs.d/doro-dired")
-(load "~/.emacs.d/doro-shell")
+(load "~/.emacs.d/doomer-basic-keys")
+(load "~/.emacs.d/doomer-cua")
+(load "~/.emacs.d/doomer-avy")
+(load "~/.emacs.d/doomer-minibuffer")
+(load "~/.emacs.d/doomer-window")
+(load "~/.emacs.d/doomer-expand-region")
+(load "~/.emacs.d/doomer-dired")
+(load "~/.emacs.d/doomer-shell")
 
 ;; text
-(load "~/.emacs.d/doro-text")
-(load "~/.emacs.d/doro-comment")
-(load "~/.emacs.d/doro-yasnippet")
-(load "~/.emacs.d/doro-register")
-(load "~/.emacs.d/doro-iedit") 
-(load "~/.emacs.d/doro-multiple-cursors")
-(load "~/.emacs.d/doro-drag-stuff")
+(load "~/.emacs.d/doomer-text")
+(load "~/.emacs.d/doomer-comment")
+(load "~/.emacs.d/doomer-yasnippet")
+(load "~/.emacs.d/doomer-register")
+(load "~/.emacs.d/doomer-iedit") 
+(load "~/.emacs.d/doomer-multiple-cursors")
+(load "~/.emacs.d/doomer-drag-stuff")
 
 ;; lang
-(load "~/.emacs.d/doro-indent")
-(load "~/.emacs.d/doro-company")
-(load "~/.emacs.d/doro-lsp")
-(load "~/.emacs.d/doro-ag")
-(load "~/.emacs.d/doro-dumb-jump")
-(load "~/.emacs.d/doro-projectile")
-(load "~/.emacs.d/doro-wgrep")
+(load "~/.emacs.d/doomer-indent")
+(load "~/.emacs.d/doomer-company")
+(load "~/.emacs.d/doomer-lsp")
+(load "~/.emacs.d/doomer-ag")
+(load "~/.emacs.d/doomer-dumb-jump")
+(load "~/.emacs.d/doomer-projectile")
+(load "~/.emacs.d/doomer-wgrep")
 
 ;; lang C++
-(load "~/.emacs.d/doro-ccls")
+(load "~/.emacs.d/doomer-ccls")
 
 ;; lang javascript
-(load "~/.emacs.d/doro-js2-mode")
+(load "~/.emacs.d/doomer-js2-mode")
 
 ;; theme
-(load "~/.emacs.d/doro-theme")
+(load "~/.emacs.d/doomer-theme")
 
 ;; other
-(load "~/.emacs.d/doro-orgmode")
+(load "~/.emacs.d/doomer-orgmode")
 
 ;; RUS Hotkey
 (cfg:reverse-input-method 'russian-computer)

@@ -5,7 +5,7 @@
   :ensure t
   
   :bind
-  (:map doro-mode-map
+  (:map doomer-mode-map
 	("M-s s" . er/mark-inside-pairs)
 	("M-s S" . er/mark-outside-pairs)
 
