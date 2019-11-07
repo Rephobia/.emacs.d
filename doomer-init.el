@@ -106,10 +106,12 @@
 ;; ============================================================================
 
 (defvar doomer-mode-map (make-sparse-keymap)
-  "doomer-mode editing commands key bindings")
+  "Global key map for doomer mode.
+This keymap allows you to set keybindings,
+that won't be remapped third party packages.")
 
 (define-minor-mode doomer-mode
-  "doro minor mode"
+  "Doomer minor mode."
   :init-value t
   doomer-mode-map)
 
