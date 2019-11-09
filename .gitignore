@@ -2,6 +2,7 @@
 !*.el
 !.gitignore
 !doomer-snippets/
+!doomer-config/
 !*.md
 *.yas-compiled-*
 .mc-lists.el

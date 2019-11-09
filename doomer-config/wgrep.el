@@ -6,7 +6,7 @@
   :after ag
   
   :bind
-  (:map doomer-mode-map
+  (:map doomer/keymap
 	("C-x w w" . wgrep-change-to-wgrep-mode)
 	("C-x w k" . wgrep-abort-changes)
 	)

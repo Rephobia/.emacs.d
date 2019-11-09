@@ -7,7 +7,7 @@
   :delight
   
   :bind
-  (:map doomer-mode-map
+  (:map doomer/keymap
 	("M-f d" . xref-find-definitions-other-window)
 	)
   

@@ -105,15 +105,15 @@
 ;; user mode
 ;; ============================================================================
 
-(defvar doomer-mode-map (make-sparse-keymap)
+(defvar doomer/keymap (make-sparse-keymap)
   "Global key map for doomer mode.
 This keymap allows you to set keybindings,
 that won't be remapped third party packages.")
 
 (define-minor-mode doomer-mode
-  "Doomer minor mode."
+  "Doomer minor mode. It uses doomer/keymap"
   :init-value t
-  doomer-mode-map)
+  :keymap doomer/keymap)
 
 (defun turn-on-doomer-mode ()
   (interactive)
@@ -123,48 +123,49 @@ that won't be remapped third party packages.")
   (interactive)
   (doomer-mode -1))
 
+
 ;; Load options
 ;; ============================================================================
 
 ;; basic
-(load "~/.emacs.d/doomer-basic-keys")
-(load "~/.emacs.d/doomer-cua")
-(load "~/.emacs.d/doomer-avy")
-(load "~/.emacs.d/doomer-minibuffer")
-(load "~/.emacs.d/doomer-window")
-(load "~/.emacs.d/doomer-expand-region")
-(load "~/.emacs.d/doomer-dired")
-(load "~/.emacs.d/doomer-shell")
+(load "~/.emacs.d/doomer-config/basic-keys")
+(load "~/.emacs.d/doomer-config/cua")
+(load "~/.emacs.d/doomer-config/avy")
+(load "~/.emacs.d/doomer-config/minibuffer")
+(load "~/.emacs.d/doomer-config/window")
+(load "~/.emacs.d/doomer-config/expand-region")
+(load "~/.emacs.d/doomer-config/dired")
+(load "~/.emacs.d/doomer-config/shell")
 
 ;; text
-(load "~/.emacs.d/doomer-text")
-(load "~/.emacs.d/doomer-comment")
-(load "~/.emacs.d/doomer-yasnippet")
-(load "~/.emacs.d/doomer-register")
-(load "~/.emacs.d/doomer-iedit") 
-(load "~/.emacs.d/doomer-multiple-cursors")
-(load "~/.emacs.d/doomer-drag-stuff")
+(load "~/.emacs.d/doomer-config/text")
+(load "~/.emacs.d/doomer-config/comment")
+(load "~/.emacs.d/doomer-config/yasnippet")
+(load "~/.emacs.d/doomer-config/register")
+(load "~/.emacs.d/doomer-config/iedit")
+(load "~/.emacs.d/doomer-config/multiple-cursors")
+(load "~/.emacs.d/doomer-config/drag-stuff")
 
-;; lang
-(load "~/.emacs.d/doomer-indent")
-(load "~/.emacs.d/doomer-company")
-(load "~/.emacs.d/doomer-lsp")
-(load "~/.emacs.d/doomer-ag")
-(load "~/.emacs.d/doomer-dumb-jump")
-(load "~/.emacs.d/doomer-projectile")
-(load "~/.emacs.d/doomer-wgrep")
+ ;; lang
+(load "~/.emacs.d/doomer-config/indent")
+(load "~/.emacs.d/doomer-config/company")
+(load "~/.emacs.d/doomer-config/lsp")
+(load "~/.emacs.d/doomer-config/ag")
+(load "~/.emacs.d/doomer-config/dumb-jump")
+(load "~/.emacs.d/doomer-config/projectile")
+(load "~/.emacs.d/doomer-config/wgrep")
 
 ;; lang C++
-(load "~/.emacs.d/doomer-ccls")
+(load "~/.emacs.d/doomer-config/ccls")
 
 ;; lang javascript
-(load "~/.emacs.d/doomer-js2-mode")
+(load "~/.emacs.d/doomer-config/js2-mode")
 
 ;; theme
-(load "~/.emacs.d/doomer-theme")
+(load "~/.emacs.d/doomer-config/theme")
 
 ;; other
-(load "~/.emacs.d/doomer-orgmode")
+(load "~/.emacs.d/doomer-config/orgmode")
 
 ;; RUS Hotkey
 (cfg:reverse-input-method 'russian-computer)

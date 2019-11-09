@@ -5,11 +5,11 @@
   :ensure t
   
   :bind
-  (:map doomer-mode-map
+  (:map doomer/keymap
 	("M-1" . avy-goto-line)
 	("M-2" . avy-goto-char-timer)
-	("M-!" . doomer-avy-mark-line)
-	("M-@" . doomer-avy-mark-char-timer)
+	("M-!" . doomer/avy-mark-line)
+	("M-@" . doomer/avy-mark-char-timer)
 	)
 
   :config
@@ -26,13 +26,13 @@
 
   :init
 
-  (defun doomer-avy-mark-line ()
+  (defun doomer/avy-mark-line ()
     (interactive)
     (if (not (use-region-p))
 	(progn (push-mark (point) t t) (avy-goto-line))
       (avy-goto-line)))
 
-  (defun doomer-avy-mark-char-timer ()
+  (defun doomer/avy-mark-char-timer ()
     (interactive)
     (if (not (use-region-p))
 	(progn (push-mark (point) t t) (avy-goto-char-timer))

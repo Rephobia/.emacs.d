@@ -1,5 +1,5 @@
 
-(use-package doomer-shell
+(use-package doomer/shell
   :bind
   (:map minibuffer-local-shell-command-map
 	("M-p" . previous-history-element)

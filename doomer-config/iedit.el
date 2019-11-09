@@ -5,7 +5,7 @@
   :ensure t
   
   :bind
-  (:map doomer-mode-map
+  (:map doomer/keymap
 	("M-'" . iedit-mode)
 	("M-\"" . (lambda () "iedit local" (interactive) (iedit-mode 0)))
 	)

@@ -5,7 +5,7 @@
   :ensure t
   
   :bind
-  (:map doomer-mode-map
+  (:map doomer/keymap
 	("M-s s" . er/mark-inside-pairs)
 	("M-s S" . er/mark-outside-pairs)
 

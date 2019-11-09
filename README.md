@@ -4,4 +4,4 @@
  
 ```
 
-add (load "~/.emacs.d/doomer-init.el") to your ~/.emacs
+add (load "~/.emacs.d/doomer-config/init") to your ~/.emacs
