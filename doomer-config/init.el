@@ -129,6 +129,8 @@ that won't be remapped third party packages.")
 
 ;; basic
 (load "~/.emacs.d/doomer-config/basic-keys")
+(load "~/.emacs.d/doomer-config/text")
+
 (load "~/.emacs.d/doomer-config/cua")
 (load "~/.emacs.d/doomer-config/avy")
 (load "~/.emacs.d/doomer-config/minibuffer")
@@ -138,13 +140,9 @@ that won't be remapped third party packages.")
 (load "~/.emacs.d/doomer-config/shell")
 
 ;; text
-(load "~/.emacs.d/doomer-config/text")
-(load "~/.emacs.d/doomer-config/comment")
+
 (load "~/.emacs.d/doomer-config/yasnippet")
 (load "~/.emacs.d/doomer-config/register")
-(load "~/.emacs.d/doomer-config/iedit")
-(load "~/.emacs.d/doomer-config/multiple-cursors")
-(load "~/.emacs.d/doomer-config/drag-stuff")
 
  ;; lang
 (load "~/.emacs.d/doomer-config/indent")
