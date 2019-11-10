@@ -37,49 +37,25 @@
 	("C-w"   . doomer/line-or-region-kill)
 	("C-e"   . doomer/line-or-region-copy)
 	("C-d"   . doomer/line-or-region-delete)
-
-	("C-S-w" . doomer/line-above-kill)
-	("C-S-d" . doomer/line-above-delete)
-
-	("C-M-w" . doomer/line-below-kill)
-	("C-M-d" . doomer/line-below-delete)
 	)
 
   :init
 
-  (defun doomer/line-of-region (func)
+  (defun doomer/line-or-region (func)
     (if (not (use-region-p))
-	(funcall func (line-beginning-position) (line-end-position))
+	(funcall func (line-beginning-position) (+ (line-end-position) 1))
       (funcall func (region-beginning) (region-end))))
-
+  
   (defun doomer/line-or-region-kill ()
     (interactive)
-    (doomer/line-of-region #'kill-region))
-
+    (doomer/line-or-region #'kill-region))
+  
   (defun doomer/line-or-region-delete ()
     (interactive)
-    (doomer/line-of-region #'delete-region))
-
+    (doomer/line-or-region #'delete-region))
+  
   (defun doomer/line-or-region-copy ()
     (interactive)
-    (doomer/line-of-region #'kill-ring-save))
-
-  (defun doomer/line-above-kill ()
-    (interactive)
-    (save-excursion (move-beginning-of-line nil) (kill-line -1)))
-
-  (defun doomer/line-above-delete ()
-    (interactive)
-    (save-excursion (previous-line) (delete-region (line-beginning-position) (line-end-position))
-		    (delete-char 1)))
-
-  (defun doomer/line-below-kill ()
-    (interactive)
-    (save-excursion (next-line) (move-beginning-of-line nil) (kill-whole-line)))
-
-  (defun doomer/line-below-delete ()
-    (interactive)
-    (save-excursion (next-line) (delete-region (line-beginning-position) (line-end-position))
-		    (delete-char 1)))
+    (doomer/line-or-region #'kill-ring-save))
   
   )
