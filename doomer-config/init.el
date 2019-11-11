@@ -162,6 +162,16 @@ that won't be remapped third party packages.")
 ;; theme
 (load "~/.emacs.d/doomer-config/theme")
 
+(use-package volatile-highlights
+  
+  ;; https://github.com/k-talo/volatile-highlights.el
+  
+  :ensure t
+  :init
+  (volatile-highlights-mode t)
+  
+  )
+
 ;; other
 (load "~/.emacs.d/doomer-config/orgmode")
 

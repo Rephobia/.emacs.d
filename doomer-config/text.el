@@ -25,6 +25,57 @@
   )
 
 
+(use-package doomer/line-or-region
+  :bind
+  (:map doomer/keymap
+	("C-w" . doomer/line-or-region-kill)
+	("C-e" . doomer/line-or-region-copy)
+	("C-d" . doomer/line-or-region-delete)
+	)
+
+  :init
+
+  (defun doomer/line-or-region (func)
+    (if (not (use-region-p))
+	(funcall func (line-beginning-position) (+ (line-end-position) 1))
+      (funcall func (region-beginning) (region-end))))
+  
+  (defun doomer/line-or-region-kill ()
+    (interactive)
+    (doomer/line-or-region #'kill-region))
+  
+  (defun doomer/line-or-region-delete ()
+    (interactive)
+    (doomer/line-or-region #'delete-region))
+  
+  (defun doomer/line-or-region-copy ()
+    (interactive)
+    (doomer/line-or-region #'kill-ring-save))
+  
+  )
+
+
+(use-package undo-tree
+  :ensure t
+  :bind
+  (:map doomer/keymap
+	("C-z"   . undo-tree-undo)
+	("C-v"   . yank)
+	("C-S-v" . yank-pop)
+
+	("C-S-z" . undo-tree-redo)
+	)
+
+  :init
+  
+  (defun doomer/clear-kill-ring ()
+    (interactive)
+    (setq kill-ring 'nil)
+    (message "kill ring cleaned"))
+  
+  )
+
+
 (use-package multiple-cursors
   
   ;; https://github.com/magnars/multiple-cursors.el
@@ -144,13 +195,11 @@ Goal of the keymap is to rebind C-g to conclude dragging.")
 	("C-M-o" . comment-dwim)
 	("C-S-o" . doomer/comment-copy)
 
-	("M-s M-s" . doomer/shift-region)
 	)
 
   :init
-
+  
   (defun doomer/shift-region ()
-    (interactive)
     (let ((beg (save-excursion (goto-char (region-beginning))
 			       (line-beginning-position)))
 	  (end (save-excursion (goto-char (region-end))(line-end-position))))
@@ -161,7 +210,7 @@ Goal of the keymap is to rebind C-g to conclude dragging.")
 
   (defun doomer/comment-copy ()
     "Comment and insert non-comment line or region.
-    the function uses 'ć' register for copy, it doesn't push to copy buffer"
+    the function uses 'ć' register for copy. Copy buffer is not used."
     (interactive)
     (let ((beg (line-beginning-position))
 	  (end (line-end-position)))
