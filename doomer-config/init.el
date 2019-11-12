@@ -139,7 +139,6 @@ that won't be remapped third party packages.")
 (load "~/.emacs.d/doomer-config/shell")
 
 ;; text
-
 (load "~/.emacs.d/doomer-config/yasnippet")
 (load "~/.emacs.d/doomer-config/register")
 
