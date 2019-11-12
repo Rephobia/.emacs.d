@@ -1,14 +1,13 @@
-;; https://github.com/mhayashi1120/Emacs-wgrep
 
 
-(use-package wgrep-ag
+
+(use-package wgrep
+  ;; https://github.com/mhayashi1120/Emacs-wgrep
   :ensure t
-  :after ag
   
   :bind
   (:map doomer/keymap
 	("C-x w w" . wgrep-change-to-wgrep-mode)
-	("C-x w k" . wgrep-abort-changes)
+	("C-x w g" . wgrep-abort-changes)
 	)
-  
   )

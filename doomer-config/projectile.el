@@ -15,9 +15,7 @@
 	("C-c C-b" . counsel-projectile)
 	("C-c C-p" . projectile-switch-project)
 
-	("C-c s s" . counsel-projectile-ag)
-	("C-c s S" . counsel-git-grep)
-	("C-c s a" . projectile-ag)
+	("C-c s s" . counsel-git-grep)
 	("C-c s g" . projectile-grep)
 	("C-c x x" . doomer/run-lxterminal)
 	)
