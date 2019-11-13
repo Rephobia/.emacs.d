@@ -128,8 +128,8 @@ that won't be remapped third party packages.")
 ;; ============================================================================
 
 ;; basic
-(load "~/.emacs.d/doomer-config/basic-keys")
-(load "~/.emacs.d/doomer-config/text")
+(load "~/.emacs.d/doomer-config/core-keys")
+(load "~/.emacs.d/doomer-config/text-keys")
 
 (load "~/.emacs.d/doomer-config/minibuffer")
 (load "~/.emacs.d/doomer-config/expand-region")
