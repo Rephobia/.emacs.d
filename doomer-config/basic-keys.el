@@ -119,3 +119,209 @@
     (doomer/mark #'doomer/word-forward))
 
   )
+
+
+(use-package doomer/window
+  :bind
+  (:map doomer/keymap
+	("C-q" . doomer/scroll-half-page-down)
+	("C-a" . doomer/scroll-half-page-up)
+	("C-S-q". recenter-top-bottom)
+	("C-S-a". recenter)
+
+	("M-[" . previous-buffer)
+	("M-]" . next-buffer)
+
+	("C-<left>"  . enlarge-window-horizontally)
+	("C-<right>" . shrink-window-horizontally)
+	("C-<up>"    . enlarge-window)
+	("C-<down>" . (lambda () (interactive) (enlarge-window -1)))
+	)
+
+  :init
+
+  (defun doomer/scroll-half-page-down ()
+    (interactive)
+    "scroll down half the page"
+    (scroll-down (- (/ (window-body-height) 2) 1)))
+
+  (defun doomer/scroll-half-page-up ()
+    (interactive)
+    "scroll up half the page"
+    (scroll-up (- (/ (window-body-height) 2) 1)))
+
+  )
+
+
+(use-package ace-window
+
+  ;; https://github.com/abo-abo/ace-window
+  
+  :ensure t
+  
+  :bind
+  (:map doomer/keymap
+	("M-w" . ace-window)
+	)
+
+  :config
+  
+  (setq aw-keys '(?q ?w ?e ?r)
+	aw-background t
+	aw-dispatch-always t
+	aw-dispatch-alist
+	'((?x aw-delete-window "Ace - Delete Window")
+	  (?d delete-window)
+	  (?D delete-other-windows)
+
+	  (?k kill-this-buffer)
+	  (?K kill-buffer-and-window)
+	  (?c doomer/kill-compilation-buf)
+
+	  (?s aw-swap-window "Ace - Swap Window")
+	  (?1 doomer/split-focus-window-v)
+	  (?2 doomer/split-focus-window-h)
+	  (?b balance-windows)
+	  ))
+
+  (defun doomer/split-focus-window-h ()
+    (split-window-horizontally)
+    (other-window 1))
+
+  (defun doomer/split-focus-window-v ()
+    (split-window-vertically)
+    (other-window 1))
+
+  (defun doomer/kill-compilation-buf ()
+    (kill-buffer "*compilation*"))
+
+  )
+
+(use-package avy
+  
+  ;; https://github.com/abo-abo/avy
+  
+  :ensure t
+  
+  :bind
+  (:map doomer/keymap
+	("M-1" . avy-goto-line)
+	("M-2" . avy-goto-char-timer)
+	("M-!" . doomer/avy-mark-line)
+	("M-@" . doomer/avy-mark-char-timer)
+	)
+
+  :config
+  (avy-setup-default)
+  (setq avy-background t
+	avy-case-fold-search nil
+	avy-all-windows t
+	avy-style 'pre
+	avy-highlight-first t
+	avy-keys '(?q ?w ?e ?r
+		      ?a ?s ?d ?f
+		      ?i ?o ?p
+		      ?j ?k ?l))
+
+  :init
+
+  (defun doomer/avy-mark-line ()
+    (interactive)
+    (if (not (use-region-p))
+	(progn (push-mark (point) t t) (avy-goto-line))
+      (avy-goto-line)))
+
+  (defun doomer/avy-mark-char-timer ()
+    (interactive)
+    (if (not (use-region-p))
+	(progn (push-mark (point) t t) (avy-goto-char-timer))
+      (avy-goto-char-timer)))
+  
+  (eval-after-load "avy"
+    '(defun avy--read-candidates (&optional re-builder)
+       "Read as many chars as possible and return their occurrences.
+At least one char must be read, and then repeatedly one next char
+may be read if it is entered before `avy-timeout-seconds'.  DEL
+deletes the last char entered, and RET exits with the currently
+read string immediately instead of waiting for another char for
+`avy-timeout-seconds'.
+The format of the result is the same as that of `avy--regex-candidates'.
+This function obeys `avy-all-windows' setting.
+RE-BUILDER is a function that takes a string and returns a regex.
+When nil, `regexp-quote' is used.
+If a group is captured, the first group is highlighted.
+Otherwise, the whole regex is highlighted."
+       (let ((str "")
+	     (re-builder (or re-builder #'regexp-quote))
+	     char break overlays regex)
+	 (unwind-protect
+	     (progn
+	       (avy--make-backgrounds
+		(avy-window-list))
+	       (while (and (not break)
+			   (setq char
+				 (read-char (format "%d  char%s: "
+						    (length overlays)
+						    (if (string= str "")
+							str
+						      (format " (%s)" str)))
+					    t
+					    (and (not (string= str ""))
+						 avy-timeout-seconds))))
+		 ;; Unhighlight
+		 (dolist (ov overlays)
+		   (delete-overlay ov))
+		 (setq overlays nil)
+		 (cond
+		  ;; Handle RET
+		  ((= char 13)
+		   (setq str (concat str (list ?\n)) ;; RET can be candidate, and break without timer
+			 break t
+			 ))
+		  ;; Handle C-h, DEL
+		  ((memq char avy-del-last-char-by)
+		   (let ((l (length str)))
+		     (when (>= l 1)
+		       (setq str (substring str 0 (1- l))))))
+		  ;; Handle ESC
+		  ((= char 27)
+		   (keyboard-quit))
+		  (t
+		   (setq str (concat str (list char)))))
+		 ;; Highlight
+		 (when (>= (length str) 1)
+		   (let ((case-fold-search
+			  (or avy-case-fold-search (string= str (downcase str))))
+			 found)
+		     (avy-dowindows current-prefix-arg
+		       (dolist (pair (avy--find-visible-regions
+				      (window-start)
+				      (window-end (selected-window) t)))
+			 (save-excursion
+			   (goto-char (car pair))
+			   (setq regex (funcall re-builder str))
+			   (while (re-search-forward regex (cdr pair) t)
+			     (unless (not (avy--visible-p (1- (point))))
+			       (let* ((idx (if (= (length (match-data)) 4) 1 0))
+				      (ov (make-overlay
+					   (match-beginning idx) (match-end idx))))
+				 (setq found t)
+				 (push ov overlays)
+				 (overlay-put
+				  ov 'window (selected-window))
+				 (overlay-put
+				  ov 'face 'avy-goto-char-timer-face)))))))
+		     ;; No matches at all, so there's surely a typo in the input.
+		     (unless found (beep)))))
+	       (nreverse (mapcar (lambda (ov)
+				   (cons (cons (overlay-start ov)
+					       (overlay-end ov))
+					 (overlay-get ov 'window)))
+				 overlays)))
+	   (dolist (ov overlays)
+	     (delete-overlay ov))
+	   (avy--done))))
+    )
+  
+  )
+
