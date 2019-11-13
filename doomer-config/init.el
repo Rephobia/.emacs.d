@@ -136,7 +136,5 @@ that won't be remapped third party packages.")
 (load "~/.emacs.d/doomer-config/yasnippet")
 (load "~/.emacs.d/doomer-config/doomer-theme")
 
-(load "~/.emacs.d/doomer-config/expand-region")
-
 ;; RUS Hotkey
 (cfg:reverse-input-method 'russian-computer)
