@@ -1,7 +1,8 @@
-;; https://github.com/joaotavora/yasnippet
-
 
 (use-package yasnippet
+  
+  ;; https://github.com/joaotavora/yasnippet
+  
   :ensure t
   :delight yas-minor-mode
 

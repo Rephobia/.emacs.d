@@ -79,6 +79,7 @@
 
   )
 
+
 (use-package dumb-jump
   
   ;; https://github.com/jacktasia/dumb-jump
@@ -99,3 +100,10 @@
 	dumb-jump-use-visible-window nil)
 
   )
+
+
+(use-package org-mode
+  :ensure org-plus-contrib
+  :mode (("\\.org$" . org-mode))
+  )
+

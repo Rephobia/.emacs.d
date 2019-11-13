@@ -133,19 +133,10 @@ that won't be remapped third party packages.")
 (load "~/.emacs.d/doomer-config/minibuffer")
 (load "~/.emacs.d/doomer-config/not-text-editor")
 (load "~/.emacs.d/doomer-config/language-support")
+(load "~/.emacs.d/doomer-config/yasnippet")
 (load "~/.emacs.d/doomer-config/doomer-theme")
 
 (load "~/.emacs.d/doomer-config/expand-region")
-
-;; text
-(load "~/.emacs.d/doomer-config/yasnippet")
-(load "~/.emacs.d/doomer-config/register")
-
-;; theme
-
-
-;; other
-(load "~/.emacs.d/doomer-config/orgmode")
 
 ;; RUS Hotkey
 (cfg:reverse-input-method 'russian-computer)
