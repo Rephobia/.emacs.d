@@ -133,9 +133,6 @@ that won't be remapped third party packages.")
 
 (load "~/.emacs.d/doomer-config/minibuffer")
 (load "~/.emacs.d/doomer-config/expand-region")
-(load "~/.emacs.d/doomer-config/dired")
-(load "~/.emacs.d/doomer-config/shell")
-
 ;; text
 (load "~/.emacs.d/doomer-config/yasnippet")
 (load "~/.emacs.d/doomer-config/register")
@@ -157,15 +154,6 @@ that won't be remapped third party packages.")
 ;; theme
 (load "~/.emacs.d/doomer-config/theme")
 
-(use-package volatile-highlights
-  
-  ;; https://github.com/k-talo/volatile-highlights.el
-  
-  :ensure t
-  :init
-  (volatile-highlights-mode t)
-  
-  )
 
 ;; other
 (load "~/.emacs.d/doomer-config/orgmode")

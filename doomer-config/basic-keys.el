@@ -153,6 +153,33 @@
   )
 
 
+(use-package doomer/shell
+  :bind
+  (:map minibuffer-local-shell-command-map
+	([remap previous-line] . previous-history-element)
+	([remap next-line] . next-history-element)
+	)
+  (:map shell-mode-map
+	([remap previous-line] . comint-previous-input)
+	([remap next-line] . comint-next-input)	       
+	)
+  )
+
+
+(use-package dired
+  :init
+  (setq dired-listing-switches "-aBhl  --group-directories-first")
+  (put 'dired-find-alternate-file 'disabled nil)
+  (put 'set-goal-column 'disabled nil)
+  
+  :bind
+  (:map doomer/keymap
+	("C-x C-d" . dired-jump)
+	)
+  
+  )
+
+
 (use-package ace-window
 
   ;; https://github.com/abo-abo/ace-window
