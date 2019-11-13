@@ -130,20 +130,19 @@ that won't be remapped third party packages.")
 ;; basic
 (load "~/.emacs.d/doomer-config/core-keys")
 (load "~/.emacs.d/doomer-config/text-keys")
+(load "~/.emacs.d/doomer-config/not-text-editor")
 
 (load "~/.emacs.d/doomer-config/minibuffer")
 (load "~/.emacs.d/doomer-config/expand-region")
+
 ;; text
 (load "~/.emacs.d/doomer-config/yasnippet")
 (load "~/.emacs.d/doomer-config/register")
 
  ;; lang
 (load "~/.emacs.d/doomer-config/indent")
-(load "~/.emacs.d/doomer-config/company")
-(load "~/.emacs.d/doomer-config/lsp")
+(load "~/.emacs.d/doomer-config/lsp.el")
 (load "~/.emacs.d/doomer-config/dumb-jump")
-(load "~/.emacs.d/doomer-config/projectile")
-(load "~/.emacs.d/doomer-config/wgrep")
 
 ;; lang C++
 (load "~/.emacs.d/doomer-config/ccls")
