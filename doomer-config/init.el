@@ -130,10 +130,11 @@ that won't be remapped third party packages.")
 ;; basic
 (load "~/.emacs.d/doomer-config/core-keys")
 (load "~/.emacs.d/doomer-config/text-keys")
+(load "~/.emacs.d/doomer-config/minibuffer")
 (load "~/.emacs.d/doomer-config/not-text-editor")
 (load "~/.emacs.d/doomer-config/language-support")
+(load "~/.emacs.d/doomer-config/doomer-theme")
 
-(load "~/.emacs.d/doomer-config/minibuffer")
 (load "~/.emacs.d/doomer-config/expand-region")
 
 ;; text
@@ -141,7 +142,6 @@ that won't be remapped third party packages.")
 (load "~/.emacs.d/doomer-config/register")
 
 ;; theme
-(load "~/.emacs.d/doomer-config/theme")
 
 
 ;; other
