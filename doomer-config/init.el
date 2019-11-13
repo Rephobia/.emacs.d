@@ -140,9 +140,6 @@ that won't be remapped third party packages.")
 (load "~/.emacs.d/doomer-config/yasnippet")
 (load "~/.emacs.d/doomer-config/register")
 
-
-(load "~/.emacs.d/doomer-config/dumb-jump")
-
 ;; theme
 (load "~/.emacs.d/doomer-config/theme")
 
