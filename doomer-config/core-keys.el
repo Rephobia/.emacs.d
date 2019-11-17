@@ -153,7 +153,7 @@
   )
 
 
-(use-package doomer/shell
+(use-package shell
   :bind
   (:map minibuffer-local-shell-command-map
 	([remap previous-line] . previous-history-element)
@@ -163,6 +163,9 @@
 	([remap previous-line] . comint-previous-input)
 	([remap next-line] . comint-next-input)	       
 	)
+  :init
+  (push (cons "\\*shell\\*" display-buffer--same-window-action) display-buffer-alist)
+  
   )
 
 
@@ -220,10 +223,10 @@
 	aw-background t
 	aw-dispatch-always t
 	aw-dispatch-alist
-	'((?x aw-delete-window "Ace - Delete Window")
-	  (?d delete-window)
+	'((?d delete-window)
 	  (?D delete-other-windows)
 
+	  (?x bury-buffer)
 	  (?k kill-this-buffer)
 	  (?K kill-buffer-and-window)
 	  (?c doomer/kill-compilation-buf)

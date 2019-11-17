@@ -56,7 +56,7 @@
 
 (setq require-final-newline    t)       
 (setq require-final-newline    t)       
-(setq next-line-add-newjlines nil)      
+(setq next-line-add-newlines nil)
 
 (delete-selection-mode t)
 
