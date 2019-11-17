@@ -211,7 +211,7 @@
   
   :bind
   (:map doomer/keymap
-	("M-w" . ace-window)
+	("M-3" . ace-window)
 	)
 
   :config
@@ -229,8 +229,8 @@
 	  (?c doomer/kill-compilation-buf)
 
 	  (?s aw-swap-window "Ace - Swap Window")
-	  (?1 doomer/split-focus-window-v)
-	  (?2 doomer/split-focus-window-h)
+	  (?v doomer/split-focus-window-v)
+	  (?h doomer/split-focus-window-h)
 	  (?b balance-windows)
 	  ))
 
