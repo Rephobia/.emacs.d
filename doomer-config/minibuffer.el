@@ -15,9 +15,8 @@
 	)
   
   :config
-  
-  (setq ivy-format-function 'ivy-format-function-line
-	ivy-height 20
+  (setcdr (assq t ivy-format-functions-alist) #'ivy-format-function-line)
+  (setq ivy-height 20
 	ivy-use-virtual-buffers t)
 
   (defun sudo-find-file (file-name)
