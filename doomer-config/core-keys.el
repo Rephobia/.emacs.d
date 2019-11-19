@@ -169,6 +169,46 @@
   )
 
 
+(use-package eshell-toggle
+  
+  ;; https://github.com/4da/eshell-toggle
+  
+  :ensure t
+  :custom
+  (eshell-toggle-size-fraction 2)
+  (eshell-toggle-use-projectile-root t)
+  (eshell-toggle-run-command nil)
+  (eshell-toggle-init-function #'eshell-toggle-init-ansi-term)
+
+  :bind
+  (:map doomer/keymap
+	("s-`" . eshell-toggle))
+
+  :init
+  
+  ;; Override. Eshell-toggle function creates a shell in new window
+  
+  (eval-after-load "eshell-toggle"
+    '(defun eshell-toggle ()
+      "Show eshell at the bottom of current window cd to current buffer's path.
+If eshell-toggle'd buffer is already visible in frame for current buffer or current window is (toggled) eshell itself then hide it."
+      (interactive)
+      (if (eq eshell-toggle--toggle-buffer-p t)
+	  ;; if we are in eshell-toggle buffer just delete its window
+	  (bury-buffer)
+	(let ((buf-name (eshell-toggle--make-buffer-name)))
+	  (if (get-buffer buf-name)
+	      ;; buffer is already created
+	      (or (-some-> buf-name eshell-toggle--visiblep delete-window)
+		  (switch-to-buffer buf-name))
+	    ;; buffer is not created, create it
+	    (eshell-toggle--new-buffer buf-name)
+	    (switch-to-buffer buf-name)))))    
+    )
+  )
+
+
+
 (use-package dired
   :init
   (setq dired-listing-switches "-aBhl  --group-directories-first")
