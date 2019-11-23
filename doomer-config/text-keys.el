@@ -40,7 +40,7 @@
 	(funcall func (line-beginning-position)
 		 (if (bound-and-true-p minibuffer-inactive-mode)
 		     (line-end-position)
-		   (+ (line-end-position 1))))
+		   (+ (line-end-position) 1)))
       (funcall func (region-beginning) (region-end))))
   
   (defun doomer/line-or-region-kill ()
