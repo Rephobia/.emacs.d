@@ -34,11 +34,16 @@
 	)
 
   :init
-
+  
+  (defun doomer/is_lastline ()
+    (if (= (point-max) (line-end-position))
+	t
+      nil))
+  
   (defun doomer/line-or-region (func)
     (if (not (use-region-p))
 	(funcall func (line-beginning-position)
-		 (if (bound-and-true-p minibuffer-inactive-mode)
+		 (if (or (bound-and-true-p minibuffer-inactive-mode) (doomer/is_lastline))
 		     (line-end-position)
 		   (+ (line-end-position) 1)))
       (funcall func (region-beginning) (region-end))))
@@ -56,9 +61,6 @@
     (doomer/line-or-region #'kill-ring-save))
   
   )
-
-
-
 
 (use-package undo-tree
   :ensure t
