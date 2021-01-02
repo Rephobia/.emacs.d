@@ -136,6 +136,7 @@ that won't be remapped third party packages.")
 (load "~/.emacs.d/doomer-config/yasnippet")
 (load "~/.emacs.d/doomer-config/doomer-theme")
 
+(global-undo-tree-mode)
 
 ;; RUS Hotkey
 (cfg:reverse-input-method 'russian-computer)
