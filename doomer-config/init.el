@@ -1,6 +1,3 @@
-(require 'server)
-(server-start)
-
 ;; Hotkey RUS
 (defun cfg:reverse-input-method (input-method)
   "Build the reverse mapping of single letters from INPUT-METHOD."
