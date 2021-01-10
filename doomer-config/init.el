@@ -124,31 +124,31 @@ that won't be remapped third party packages.")
 ;; Load options
 ;; ============================================================================
 
+(load "~/.emacs.d/doomer-config/core-keys")
+(load "~/.emacs.d/doomer-config/text-edit")
+(load "~/.emacs.d/doomer-config/line-or-region")
+(load "~/.emacs.d/doomer-config/comment")
+(load "~/.emacs.d/doomer-config/register")
+(load "~/.emacs.d/doomer-config/language-support")
+
+;; third-party packages
+
 (load "~/.emacs.d/doomer-config/dump-jump")
 (load "~/.emacs.d/doomer-config/org-mode")
-(load "~/.emacs.d/doomer-config/volatile-highlights")
 (load "~/.emacs.d/doomer-config/company")
 (load "~/.emacs.d/doomer-config/projectile")
-
-(load "~/.emacs.d/doomer-config/text-keys")
-
+(load "~/.emacs.d/doomer-config/volatile-highlights")
 (load "~/.emacs.d/doomer-config/undo-tree")
 (load "~/.emacs.d/doomer-config/multiple-cursors")
 (load "~/.emacs.d/doomer-config/iedit")
 (load "~/.emacs.d/doomer-config/drug-staff")
-
-
-(load "~/.emacs.d/doomer-config/core-keys")
-
 (load "~/.emacs.d/doomer-config/dired")
 (load "~/.emacs.d/doomer-config/expand-region")
 (load "~/.emacs.d/doomer-config/ace-window")
 (load "~/.emacs.d/doomer-config/avy")
-
-
-(load "~/.emacs.d/doomer-config/language-support")
 (load "~/.emacs.d/doomer-config/minibuffer")
 (load "~/.emacs.d/doomer-config/yasnippet")
+
 (load "~/.emacs.d/doomer-config/doomer-theme")
 
 (global-undo-tree-mode)
