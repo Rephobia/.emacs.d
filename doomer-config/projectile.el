@@ -11,7 +11,6 @@
 	("C-c C-f" . projectile-find-file)
 	("C-c C-s" . projectile-save-project-buffers)
 
-	("M-w" . counsel-projectile)
 	("C-c C-p" . projectile-switch-project)
 
 	("C-c s s" . counsel-git-grep)

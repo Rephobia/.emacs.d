@@ -6,10 +6,10 @@
   
   :bind
   (:map doomer/keymap
-	("M-1" . avy-goto-line)
-	("M-2" . avy-goto-char-timer)
-	("M-!" . doomer/avy-mark-line)
-	("M-@" . doomer/avy-mark-char-timer)
+	("M-w" . avy-goto-line)
+	("M-e" . avy-goto-char-timer)
+	("M-W" . doomer/avy-mark-line)
+	("M-E" . doomer/avy-mark-char-timer)
 	)
 
   :config
