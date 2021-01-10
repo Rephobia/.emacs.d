@@ -133,6 +133,10 @@ that won't be remapped third party packages.")
 (load "~/.emacs.d/doomer-config/register")
 (load "~/.emacs.d/doomer-config/language-support")
 
+;; language modes
+(load "~/.emacs.d/doomer-config/php-mode")
+
+
 ;; third-party packages
 
 (load "~/.emacs.d/doomer-config/dump-jump")
