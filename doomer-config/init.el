@@ -124,9 +124,6 @@ that won't be remapped third party packages.")
 ;; Load options
 ;; ============================================================================
 
-;; basic
-(load "~/.emacs.d/doomer-config/not-text-editor")
-
 (load "~/.emacs.d/doomer-config/dump-jump")
 (load "~/.emacs.d/doomer-config/org-mode")
 (load "~/.emacs.d/doomer-config/volatile-highlights")
