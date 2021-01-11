@@ -5,7 +5,6 @@
   :ensure t
   :bind
   (:map doomer/keymap
-	("M-d l" . goto-line)
 	("M-d d" . dumb-jump-go)
 	("M-d b" . dumb-jump-back)
 	("M-d o" . dumb-jump-go-other-window)
