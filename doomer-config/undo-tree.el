@@ -10,6 +10,7 @@
 	)
 
   :init
+  (global-undo-tree-mode)
   
   (defun doomer/clear-kill-ring ()
     (interactive)

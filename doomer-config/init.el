@@ -46,12 +46,11 @@
 (setq help-window-select t)
 
 (setq next-screen-context-lines 0)
-;;(global-undo-tree-mode)
+
 (transient-mark-mode t)
 (electric-pair-mode t)
 (setq show-trailing-whitespace t)
 
-(setq require-final-newline    t)       
 (setq require-final-newline    t)       
 (setq next-line-add-newlines nil)
 
@@ -156,8 +155,6 @@ that won't be remapped third party packages.")
 (load "~/.emacs.d/doomer-config/yasnippet")
 
 (load "~/.emacs.d/doomer-config/doomer-theme")
-
-(global-undo-tree-mode)
 
 ;; RUS Hotkey
 (cfg:reverse-input-method 'russian-computer)
