@@ -128,7 +128,7 @@ that won't be remapped third party packages.")
 
 (load "~/.emacs.d/doomer-config/core-keys")
 (load "~/.emacs.d/doomer-config/text-edit")
-(load "~/.emacs.d/doomer-config/line-or-region")
+(load "~/.emacs.d/doomer-config/kill-copy-delete")
 (load "~/.emacs.d/doomer-config/comment")
 (load "~/.emacs.d/doomer-config/register")
 

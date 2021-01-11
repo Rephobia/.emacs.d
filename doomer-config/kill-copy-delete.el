@@ -1,9 +1,9 @@
-(use-package doomer/line-or-region
+(use-package doomer/kill-copy-delete
   :bind
   (:map doomer/keymap
-	("C-w" . doomer/line-or-region-kill)
-	("C-e" . doomer/line-or-region-copy)
-	("C-d" . doomer/line-or-region-delete)
+	("C-w" . doomer/kill)
+	("C-e" . doomer/copy)
+	("C-d" . doomer/delete)
 	)
 
   :init
@@ -21,15 +21,15 @@
 		   (+ (line-end-position) 1)))
       (funcall func (region-beginning) (region-end))))
   
-  (defun doomer/line-or-region-kill ()
+  (defun doomer/kill ()
     (interactive)
     (doomer/line-or-region #'kill-region))
   
-  (defun doomer/line-or-region-delete ()
+  (defun doomer/delete ()
     (interactive)
     (doomer/line-or-region #'delete-region))
   
-  (defun doomer/line-or-region-copy ()
+  (defun doomer/copy ()
     (interactive)
     (doomer/line-or-region #'kill-ring-save))
   
