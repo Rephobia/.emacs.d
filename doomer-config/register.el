@@ -5,11 +5,15 @@
 	("C-r W" . doomer/kill-to-register)
 	("C-r e" . doomer/append-to-register)
 	("C-r E" . doomer/copy-to-register)
-	("C-r v" . doomer/paste-from-register)
+	("C-r V" . doomer/paste-from-register)
+
+	("C-r r" . xah-copy-to-register-1)
+	("C-r v" . xah-paste-from-register-1)
+
 	)
-  
+
   :init
-  
+
   (setq register-preview-delay 0)
   (setq register-separator ?+)
   (set-register register-separator "\n\n")
@@ -52,5 +56,30 @@
     (when (use-region-p)
       (delete-region (region-beginning) (region-end)))
     (insert-register reg))
-  
+
+  (defun xah-copy-to-register-1 ()
+    "Copy current line or text selection to register 1.
+See also: `xah-paste-from-register-1', `copy-to-register'.
+
+URL `http://ergoemacs.org/emacs/elisp_copy-paste_register_1.html'
+Version 2017-01-23"
+    (interactive)
+    (let ($p1 $p2)
+      (if (region-active-p)
+	  (progn (setq $p1 (region-beginning))
+		 (setq $p2 (region-end)))
+	(progn (setq $p1 (line-beginning-position))
+	       (setq $p2 (line-end-position))))
+      (copy-to-register ?1 $p1 $p2)
+      (message "Copied to register 1: 「%s」." (buffer-substring-no-properties $p1 $p2))))
+
+  (defun xah-paste-from-register-1 ()
+    "Paste text from register 1.
+See also: `xah-copy-to-register-1', `insert-register'.
+URL `http://ergoemacs.org/emacs/elisp_copy-paste_register_1.html'
+Version 2015-12-08"
+    (interactive)
+    (when (use-region-p)
+      (delete-region (region-beginning) (region-end)))
+    (insert-register ?1 t))
   )
