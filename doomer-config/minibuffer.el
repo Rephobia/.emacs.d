@@ -51,3 +51,18 @@
   (setq counsel-yank-pop-separator "\n\n----------------------------------------\n\n")
   
   )
+
+(use-package shell
+  :bind
+  (:map minibuffer-local-shell-command-map
+	([remap previous-line] . previous-history-element)
+	([remap next-line] . next-history-element)
+	)
+  (:map shell-mode-map
+	([remap previous-line] . comint-previous-input)
+	([remap next-line] . comint-next-input)	       
+	)
+  :init
+  (push (cons "\\*shell\\*" display-buffer--same-window-action) display-buffer-alist)
+  
+  )
