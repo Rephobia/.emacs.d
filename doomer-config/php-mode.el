@@ -1,6 +1,7 @@
 (use-package php-mode
   :ensure t
   :hook ((php-mode . php-mode-indent-custom)
+	 (web-mode . php-mode-indent-custom)
 	 (php-mode . (lambda () (local-set-key (kbd "<C-tab>") 'php-doc-block))))
 
   :config
