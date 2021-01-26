@@ -15,7 +15,7 @@
 
 	("C-c s s" . counsel-git-grep)
 	("C-c s g" . projectile-grep)
-	("C-c x x" . doomer/run-sakura)
+	("C-c x x" . doomer/run-st)
 	)
   :init
   
@@ -27,10 +27,10 @@
   
   (projectile-mode +1)
 
-  (defun doomer/run-sakura ()
+  (defun doomer/run-st ()
     (interactive)
-    (start-process-shell-command "sakura" nil (concat "sakura --working-directory="
-						      (projectile-project-root)))
+    (start-process-shell-command "st" nil (concat "st -d "
+						  (projectile-project-root)))
     )
   
   :config
