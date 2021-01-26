@@ -15,7 +15,7 @@
 
 	("C-c s s" . counsel-git-grep)
 	("C-c s g" . projectile-grep)
-	("C-c x x" . doomer/run-lxterminal)
+	("C-c x x" . doomer/run-sakura)
 	)
   :init
   
@@ -27,10 +27,10 @@
   
   (projectile-mode +1)
 
-  (defun doomer/run-lxterminal ()
+  (defun doomer/run-sakura ()
     (interactive)
-    (start-process-shell-command "lxterminal" nil (concat "lxterminal --working-directory="
-							  (projectile-project-root)))
+    (start-process-shell-command "sakura" nil (concat "sakura --working-directory="
+						      (projectile-project-root)))
     )
   
   :config
