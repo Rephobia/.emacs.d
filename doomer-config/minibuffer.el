@@ -5,7 +5,7 @@
   :bind
   (:map doomer/keymap
 	("C-s" . swiper)
-	("M-W" . ivy-switch-buffer)
+	("C-x b" . ivy-switch-buffer)
 	)
   (:map ivy-minibuffer-map
 	("RET" . ivy-alt-done)
