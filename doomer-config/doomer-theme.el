@@ -12,7 +12,7 @@
 
 ;; Fonts
 ;; 1liI|0Oo
-(set-default-font "consolas-11")
+(set-frame-font "consolas-11")
 ;; (set-default-font "Liberation Mono 10")
 ;; (set-default-font "Hack 10")
 ;; (set-default-font "Terminus-11")
@@ -20,7 +20,8 @@
 ;; (set-default-font "DejaVu Sans Mono-10")
 ;; (set-default-font "Anonymous Pro 11")
 
-(let ((tan "#d2b48c")
+(let ((custom--inhibit-theme-enable nil)
+      (tan "#d2b48c")
       (white "#ffffff")
       (gray-0 "#525252")
       (gray-1 "#828282")
@@ -52,6 +53,7 @@
    `(cursor  ((t (:background ,tango-scarlet-red))))
    `(region  ((t (:background ,tango-sky-blue-0))))
    `(highlight ((t (:background ,black-1))))
+
    `(show-paren-match ((t (:background nil :foreground ,fuchsia))))
    `(mode-line ((t (:background ,black-1 :foreground ,gray-2))))
    `(mode-line-inactive ((t (:background ,black-1 :foreground ,gray-0))))
@@ -102,20 +104,20 @@
   )
 
 (setq-default mode-line-format
-	      (list "-"
-	       'mode-line-mule-info
-	       'mode-line-modified
-	       'mode-line-frame-identification
-	       '(which-func-mode ("" which-func-format "--"))
-	       '(line-number-mode "%l/")
-	       '(column-number-mode "%c/")
-	       '(-3 "%p")
-	       "    %b    "
-	       '(vc-mode vc-mode)
-	       "    "
-	       (getenv "HOST")
-	       'mode-line-modes
-	       ))
+              (list "-"
+		    'mode-line-mule-info
+		    'mode-line-modified
+		    'mode-line-frame-identification
+		    '(which-func-mode ("" which-func-format "--"))
+		    '(line-number-mode "%l/")
+		    '(column-number-mode "%c/")
+		    '(-3 "%p")
+		    "    %b    "
+		    '(vc-mode vc-mode)
+		    "    "
+		    (getenv "HOST")
+		    'mode-line-modes
+		    ))
 
 (delight '((abbrev-mode nil abbrev)
 	   (smart-tab-mode " \\t" smart-tab)
