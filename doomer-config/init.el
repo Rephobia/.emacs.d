@@ -135,6 +135,7 @@ that won't be remapped third party packages.")
 (load "~/.emacs.d/doomer-config/php-mode")
 (load "~/.emacs.d/doomer-config/js-mode")
 (load "~/.emacs.d/doomer-config/yaml-mode")
+(load "~/.emacs.d/doomer-config/auctex-mode")
 
 ;; third-party packages
 
