@@ -155,7 +155,10 @@ that won't be remapped third party packages.")
 (load "~/.emacs.d/doomer-config/smart-tabs")
 (load "~/.emacs.d/doomer-config/yasnippet")
 
+;; visual
 (load "~/.emacs.d/doomer-config/doomer-theme")
+(load "~/.emacs.d/doomer-config/colorize-compilation-buffer")
 
 ;; RUS Hotkey
 (cfg:reverse-input-method 'russian-computer)
+
