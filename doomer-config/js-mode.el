@@ -14,4 +14,4 @@
   :hook ((js2-mode . (lambda ()
 		       (define-key js2-mode-map (kbd "<C-tab>") 'js-doc-insert-function-doc)
 		       (define-key js2-mode-map "@" 'js-doc-insert-tag))))
-)
+  )
