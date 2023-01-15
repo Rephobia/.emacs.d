@@ -155,6 +155,7 @@ that won't be remapped third party packages.")
 (load "~/.emacs.d/doomer-config/minibuffer")
 (load "~/.emacs.d/doomer-config/smart-tabs")
 (load "~/.emacs.d/doomer-config/yasnippet")
+(load "~/.emacs.d/doomer-config/vlf")
 
 ;; visual
 (load "~/.emacs.d/doomer-config/doomer-theme")
