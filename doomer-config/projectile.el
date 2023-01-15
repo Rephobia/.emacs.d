@@ -28,9 +28,13 @@
   (projectile-mode +1)
 
   (defun doomer/run-st ()
+    "Try to run st in (projectile-project-root)
+if (projectile-project-rool) is nil, run st in file directory"
     (interactive)
-    (start-process-shell-command "st" nil (concat "st -d "
-						  (projectile-project-root)))
+    (if (projectile-project-root)
+	(start-process-shell-command "st" nil (concat "st -d " (projectile-project-root)))
+      (start-process-shell-command "st" nil "st")
+      )
     )
   
   :config
