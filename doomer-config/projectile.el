@@ -32,7 +32,7 @@
 if (projectile-project-rool) is nil, run st in file directory"
     (interactive)
     (if (projectile-project-root)
-	(call-process "st" nil 0 nil (concat "-d " (projectile-project-root)))
+	(call-process "st" nil 0 nil "-d" (projectile-project-root))
       (call-process "st" nil 0)
       )
     )
