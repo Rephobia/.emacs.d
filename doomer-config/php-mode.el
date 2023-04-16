@@ -16,6 +16,7 @@
   :ensure t
   :config
   (setq web-mode-enable-auto-pairing nil)
+  (setq web-mode-enable-current-column-highlight t)
   )
 
 ;;; php-doc-block.el --- Php DocBlock generator
