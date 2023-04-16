@@ -14,6 +14,8 @@
 
 (use-package web-mode
   :ensure t
+  :config
+  (setq web-mode-enable-auto-pairing nil)
   )
 
 ;;; php-doc-block.el --- Php DocBlock generator
