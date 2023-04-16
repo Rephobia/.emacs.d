@@ -11,7 +11,7 @@
 
   :init
   (global-undo-tree-mode)
-  
+  (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
   (defun doomer/clear-kill-ring ()
     (interactive)
     (setq kill-ring 'nil)
