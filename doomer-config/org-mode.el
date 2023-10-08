@@ -7,7 +7,6 @@
 	("C-c C-t" . era/org-todo-with-sort)
 	)
   :init
-
   (defun era/org-todo-with-sort ()
     (interactive)
     (org-todo)
