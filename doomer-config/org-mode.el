@@ -11,6 +11,17 @@
     (interactive)
     (org-todo)
     (mark-whole-buffer)
-    (org-sort-entries nil ?o nil nil nil)
+    (org-sort-entries nil ?f 'era/todosort-key-func nil nil)
     )
+
+  (defun era/todosort-key-func ()
+    "https://stackoverflow.com/questions/63522981/how-can-i-apply-org-sort-entries-using-a-custom-todo-keyword-order/63841835#63841835"
+    (cl-position
+     (nth 2 (org-heading-components))
+     '(nil "WORK" "TODO" "DONE")
+     :test 'equal
+     )
+    )
+  (setq org-todo-keywords
+	'((sequence "TODO" "WORK" "|" "DONE")))
   )
