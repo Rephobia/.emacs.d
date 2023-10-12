@@ -119,6 +119,9 @@
 		    'mode-line-modes
 		    ))
 
+(setq org-todo-keyword-faces
+  '(("WORK" . (:foreground "#bc544b" :weight bold))))
+
 (delight '((abbrev-mode nil abbrev)
 	   (smart-tab-mode " \\t" smart-tab)
 	   (eldoc-mode nil "eldoc")
