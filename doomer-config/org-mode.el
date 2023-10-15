@@ -5,6 +5,7 @@
   :bind
   (:map doomer/keymap
 	("C-c C-t" . era/org-todo-with-sort)
+	("C-c C-a" . (lambda () (interactive) (org-agenda nil "t")))
 	)
   :init
   (defun era/org-todo-with-sort ()
@@ -22,6 +23,11 @@
      :test 'equal
      )
     )
+
   (setq org-todo-keywords
 	'((sequence "TODO" "WORK" "|" "DONE")))
+
+  (setq org-agenda-files '("~/todo"))
+
+  (setq org-agenda-window-setup 'only-window)
   )
