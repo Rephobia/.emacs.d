@@ -79,20 +79,20 @@
 	)
 
   :init
-  
+
   (defun doomer/word-comprehend-backward (char-function)
     "passed function processes words consisting only of alphabetic characters"
     (let ((case-fold-search nil))
-      (cond ((looking-back "[^[:alpha:]]\\|[A-Z]\\|[А-Я]") (funcall char-function))
-	    ((while (looking-back "[a-z]\\|[а-я]") (funcall char-function)))
-	    ((looking-back "[A-Z]\\|[А-Я]") (funcall char-function)))))
+      (cond ((looking-back "[^[:alpha:]]\\|[A-Z]\\|[А-ЯЁ]") (funcall char-function))
+            ((while (looking-back "[a-z]\\|[а-яё]") (funcall char-function)))
+            ((looking-back "[A-Z]\\|[А-ЯЁ]") (funcall char-function)))))
 
   (defun doomer/word-comprehend-forward (char-function)
     "passed function processes words consisting only of alphabetic characters"
     (let ((case-fold-search nil))
       (cond ((looking-at "[^[:alpha:]]") (funcall char-function))
-  	    ((looking-at "[A-Z]\\|[А-Я]\\|[a-z]\\|[а-я]") (funcall char-function)
-  	     (while (looking-at "[a-z]\\|[а-я]") (funcall char-function))))))
+             ((looking-at "[A-Z]\\|[А-ЯЁ]\\|[a-z]\\|[а-яё]") (funcall char-function)
+             (while (looking-at "[a-z]\\|[а-яё]") (funcall char-function))))))
 
   (defun doomer/word-backward ()
     (interactive)
