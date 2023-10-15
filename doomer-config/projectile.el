@@ -10,6 +10,7 @@
 	("C-c" . projectile-command-map)
 	("C-c C-f" . projectile-find-file)
 	("C-c C-s" . projectile-save-project-buffers)
+	("C-c C-b" . projectile-switch-to-buffer)
 
 	("C-c C-p" . projectile-switch-project)
 
