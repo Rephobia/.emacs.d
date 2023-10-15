@@ -1,5 +1,5 @@
 (use-package org-mode
-  :ensure org-plus-contrib
+  :ensure org-contrib
   :mode (("\\.org$" . org-mode))
 
   :bind
