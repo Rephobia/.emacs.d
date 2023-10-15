@@ -30,4 +30,6 @@
   (setq org-agenda-files '("~/todo"))
 
   (setq org-agenda-window-setup 'only-window)
+
+  (setq org-startup-folded t)
   )
