@@ -1,5 +1,9 @@
 (use-package php-mode
   :ensure t
+  :bind
+  (:map php-mode-map
+	("\"" . doomer/insert-quote-in-php-mode)
+	)
   :hook ((php-mode . php-mode-indent-custom)
 	 (web-mode . php-mode-indent-custom)
 	 (php-mode . (lambda () (local-set-key (kbd "<C-tab>") 'php-doc-block))))
@@ -10,6 +14,16 @@
     (setq indent-tabs-mode nil
 	tab-width 4
 	c-basic-offset 4))
+
+  (defun doomer/insert-quote-in-php-mode ()
+    "If electric-pair-mode enable, fucking php-mode always breaks highlight syntax.
+when i open quote electric mode auto-pair it, but php-mode still thinks what the quote is open.
+This function inser \" char and restart php-mode to show correct hightlight syntax.
+https://emacs.stackexchange.com/questions/75947/php-syntax-highlighting-problem"
+    (interactive)
+    (self-insert-command 1 ?\")
+    (php-mode)
+    )
   )
 
 (use-package web-mode
@@ -18,8 +32,7 @@
   (setq web-mode-enable-auto-pairing nil)
   (setq web-mode-enable-current-column-highlight t)
   )
-
-;;; php-doc-block.el --- Php DocBlock generator
+;;php-doc-block.el --- Php DocBlock generator
 
 ;; Copyright (C) 2016 Dmitriy Moskalyov
 
@@ -138,4 +151,4 @@
     (insert-to-next-line-and-indent "*/")))
 
 (provide 'php-doc-block)
-;;; php-doc-block.el ends here
+;; php-doc-block.el ends here
