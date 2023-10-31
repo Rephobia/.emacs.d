@@ -31,7 +31,9 @@ https://emacs.stackexchange.com/questions/75947/php-syntax-highlighting-problem"
   :config
   (setq web-mode-enable-auto-pairing nil)
   (setq web-mode-enable-current-column-highlight t)
+  (setq web-mode-enable-auto-indentation nil)
   )
+
 ;;php-doc-block.el --- Php DocBlock generator
 
 ;; Copyright (C) 2016 Dmitriy Moskalyov

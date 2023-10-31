@@ -49,6 +49,8 @@
 
 (transient-mark-mode t)
 (electric-pair-mode t)
+(setq electric-pair-skip-self nil)
+
 (setq show-trailing-whitespace t)
 
 (setq require-final-newline    t)       
