@@ -159,6 +159,7 @@ that won't be remapped third party packages.")
 (load "~/.emacs.d/doomer-config/yasnippet")
 (load "~/.emacs.d/doomer-config/vlf")
 (load "~/.emacs.d/doomer-config/editor-config")
+(load "~/.emacs.d/doomer-config/restclient")
 
 ;; visual
 (load "~/.emacs.d/doomer-config/doomer-theme")
