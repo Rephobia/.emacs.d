@@ -28,7 +28,7 @@
 	("M-<" . doomer/beginning-of-buffer-mark)
 	("M-." . end-of-buffer)
 	("M->" . doomer/end-of-buffer-mark)
-
+	("C-x k" . kill-this-buffer)
 	)
 
   :init

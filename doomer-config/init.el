@@ -71,6 +71,9 @@
 (show-paren-mode t)
 (setq show-paren-style 'parenthesis)
 
+;; Kill buffer without asking anything
+;; https://emacs.stackexchange.com/questions/14509/kill-process-buffer-without-confirmation
+(setq kill-buffer-query-functions (delq 'process-kill-buffer-query-function kill-buffer-query-functions))
 ;; Backup
 ;; ============================================================================
 
