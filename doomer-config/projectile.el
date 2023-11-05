@@ -17,6 +17,7 @@
 	("C-c s s" . counsel-git-grep)
 	("C-c s g" . projectile-grep)
 	("C-c x x" . doomer/run-st)
+	("C-c x v" . doomer/run-vterm)
 	)
   :init
   
@@ -35,6 +36,16 @@ if (projectile-project-rool) is nil, run st in file directory"
     (if (projectile-project-root)
 	(call-process "st" nil 0 nil "-d" (projectile-project-root))
       (call-process "st" nil 0)
+      )
+    )
+
+  (defun doomer/run-vterm ()
+    "Try to run vterm in (projectile-project-root)
+if (projectile-project-rool) is nil, vterm st in file directory"
+    (interactive)
+    (if (projectile-project-root)
+	(projectile-run-vterm)
+      (vterm)
       )
     )
   

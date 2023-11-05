@@ -43,6 +43,10 @@
       (tango-chameleon-1 "#73d216")
       (tango-chameleon-2 "#8ae234")
       (tango-scarlet-red "#a40000")
+      (bright-blue "#4287f5")
+      (bright-red "#dc322f")
+      (dark-yellow "#859900")
+
       )
 
   (custom-theme-set-faces
@@ -98,8 +102,11 @@
    `(company-preview-common			((t (:background ,black-0 :underline t))))
    `(company-scrollbar-fg			((t (:background ,black-0))))
    `(company-scrollbar-bg			((t (:background ,gray-0))))
-
    `(js2-function-param ((t (:foreground ,tango-orange))))
+
+   `(vterm-color-blue                           ((t (:foreground ,bright-blue))))
+   `(vterm-color-red                            ((t (:foreground ,bright-red))))
+   `(vterm-color-green                          ((t (:foreground ,dark-yellow))))
    )
   )
 
