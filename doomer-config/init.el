@@ -74,6 +74,7 @@
 ;; Kill buffer without asking anything
 ;; https://emacs.stackexchange.com/questions/14509/kill-process-buffer-without-confirmation
 (setq kill-buffer-query-functions (delq 'process-kill-buffer-query-function kill-buffer-query-functions))
+
 ;; Backup
 ;; ============================================================================
 
@@ -171,3 +172,14 @@ that won't be remapped third party packages.")
 
 ;; RUS Hotkey
 (cfg:reverse-input-method 'russian-computer)
+
+;; Remove unnecessary buffers
+;; ============================================================================
+(setq-default message-log-max nil)
+(setq warning-minimum-level :error)
+(kill-buffer "*Messages*")
+(kill-buffer "*Quail Completions*")
+;; Hack to remove "Async-native-compile-log", after call buffer comp-run-async-workes
+;; we add advice to comp-run-async-workes function
+(advice-add 'comp-run-async-workers :after (lambda () (kill-buffer "*Async-native-compile-log*")))
+
