@@ -29,3 +29,9 @@
 	 (vterm-copy-mode . (lambda () (call-interactively 'hl-line-mode)))
 	 )
   )
+
+(use-package vterm-toggle
+  :ensure t
+  :config
+  (setq vterm-toggle-fullscreen-p t)
+  )

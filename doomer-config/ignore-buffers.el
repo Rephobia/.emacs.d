@@ -23,3 +23,5 @@
   (string-match-p aj8/buffer-skip-regexp (buffer-name buffer)))
 
 (setq switch-to-prev-buffer-skip 'aj8/buffer-skip-p)
+
+(setq switch-to-prev-buffer-skip-regexp '("\\` " "\\`\\*"))

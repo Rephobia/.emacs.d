@@ -45,7 +45,7 @@ if (projectile-project-rool) is nil, vterm st in file directory"
     (interactive)
     (if (projectile-project-root)
 	(projectile-run-vterm)
-      (vterm)
+      (vterm-toggle)
       )
     )
 
@@ -55,12 +55,11 @@ if (projectile-project-rool) is nil, vterm st in file directory
 if current buffer is already vterm kill it"
     (interactive)
     (if (derived-mode-p 'vterm-mode)
-	(kill-this-buffer)
+	(vterm-toggle)
       (doomer/run-vterm)
       )
     )
   
   :config
   (setq projectile-completion-system 'ivy)
-  
   )
