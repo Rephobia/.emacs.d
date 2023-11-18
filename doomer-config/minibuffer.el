@@ -18,7 +18,7 @@
   (setcdr (assq t ivy-format-functions-alist) #'ivy-format-function-line)
   (setq ivy-height 20
 	ivy-use-virtual-buffers t)
-
+  (setq ivy-ignore-buffers '("\\` " "\\`\\*"))
   (defun sudo-find-file (file-name)
     "Like find file, but opens the file as root."
     (interactive "FSudo Find File: ")

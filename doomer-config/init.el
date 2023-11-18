@@ -170,16 +170,8 @@ that won't be remapped third party packages.")
 (load "~/.emacs.d/doomer-config/doomer-theme")
 (load "~/.emacs.d/doomer-config/colorize-compilation-buffer")
 
+;; behavior
+(load "~/.emacs.d/doomer-config/ignore-buffers")
+
 ;; RUS Hotkey
 (cfg:reverse-input-method 'russian-computer)
-
-;; Remove unnecessary buffers
-;; ============================================================================
-(setq-default message-log-max nil)
-(setq warning-minimum-level :error)
-(kill-buffer "*Messages*")
-(kill-buffer "*Quail Completions*")
-;; Hack to remove "Async-native-compile-log", after call buffer comp-run-async-workes
-;; we add advice to comp-run-async-workes function
-(advice-add 'comp-run-async-workers :after (lambda () (kill-buffer "*Async-native-compile-log*")))
-
