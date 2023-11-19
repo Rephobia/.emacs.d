@@ -14,7 +14,7 @@
 	([remap end-of-line] . [end])
 	([remap doomer/delete] . doomer/vterm-delete-line)
 	([remap doomer/delete-word-forward] . [delete])
-	([remap doomer/org-todo-with-sort] . vterm-copy-mode)
+	("C-S-t" . vterm-copy-mode)
 	)
   (:map vterm-copy-mode-map
 	([remap vterm-end-of-line] . doomer/copy)

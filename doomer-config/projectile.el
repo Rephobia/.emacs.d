@@ -17,7 +17,7 @@
 	("C-c s s" . counsel-git-grep)
 	("C-c s g" . projectile-grep)
 	("C-c x x" . doomer/run-st)
-	("C-c C-v" . doomer/run-vterm-toggle)
+	("C-t" . doomer/run-vterm-toggle)
 	)
   :init
   
