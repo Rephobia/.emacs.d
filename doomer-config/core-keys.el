@@ -29,6 +29,7 @@
 	("M-." . end-of-buffer)
 	("M->" . doomer/end-of-buffer-mark)
 	("C-x k" . kill-this-buffer)
+	("C-x K" . doomer/kill-other-buffers)
 	)
 
   :init
@@ -64,6 +65,13 @@
   (defun doomer/end-of-buffer-mark ()
     (interactive)
     (doomer/mark #'end-of-buffer))
+
+  (defun doomer/kill-other-buffers ()
+    "Kill all other buffers."
+    (interactive)
+    (mapc 'kill-buffer
+          (delq (current-buffer)
+                (remove-if-not 'buffer-file-name (buffer-list)))))
   )
 
 
