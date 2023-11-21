@@ -16,7 +16,7 @@
   (avy-setup-default)
   (setq avy-background t
 	avy-case-fold-search nil
-	avy-all-windows t
+	avy-all-windows 'all-frames
 	avy-style 'pre
 	avy-highlight-first t
 	avy-keys '(?q ?w ?e ?r
