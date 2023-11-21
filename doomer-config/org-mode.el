@@ -6,13 +6,16 @@
   (:map doomer/keymap
 	("C-c C-t" . doomer/org-todo-with-sort)
 	("C-c C-a" . (lambda () (interactive) (org-agenda nil "t")))
+	("C-c C-A" . org-archive-subtree)
 	)
   :init
   (defun doomer/org-todo-with-sort ()
     (interactive)
     (org-todo)
-    (mark-whole-buffer)
-    (org-sort-entries nil ?f 'doomer/todosort-key-func nil nil)
+    (save-excursion
+      (mark-whole-buffer)
+      (org-sort-entries nil ?f 'doomer/todosort-key-func nil nil)
+      )
     )
 
   (defun doomer/todosort-key-func ()
@@ -29,7 +32,11 @@
 
   (setq org-agenda-files '("~/todo"))
 
+  (setq org-archive-location "~/todo/archive/%s_archive::")
+
   (setq org-agenda-window-setup 'only-window)
 
-  (setq org-startup-folded t)
+  (setq org-startup-folded nil)
+
+  (setq org-agenda-archives-mode t)
   )
