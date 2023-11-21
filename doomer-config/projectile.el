@@ -55,7 +55,7 @@ if (projectile-project-rool) is nil, vterm st in file directory
 if current buffer is already vterm kill it"
     (interactive)
     (if (derived-mode-p 'vterm-mode)
-	(vterm-toggle)
+	(quit-window)
       (doomer/run-vterm)
       )
     )
