@@ -19,6 +19,10 @@
   (setq ivy-height 20
 	ivy-use-virtual-buffers t)
   (setq ivy-ignore-buffers '("\\` " "\\`\\*"))
+  (setq minibuffer-follows-selected-frame nil)
+  (setq enable-recursive-minibuffers t)
+  (minibuffer-depth-indicate-mode t)
+
   (defun sudo-find-file (file-name)
     "Like find file, but opens the file as root."
     (interactive "FSudo Find File: ")
@@ -26,7 +30,6 @@
       (find-file tramp-file-name)))
   
   )
-
 
 (use-package smex
   :ensure t)
