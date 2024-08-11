@@ -19,6 +19,7 @@
   (setq ivy-height 20
 	ivy-use-virtual-buffers t)
   (setq ivy-ignore-buffers '("\\` " "\\`\\*"))
+  (setq minibuffer-follows-selected-frame nil)
   (defun sudo-find-file (file-name)
     "Like find file, but opens the file as root."
     (interactive "FSudo Find File: ")
