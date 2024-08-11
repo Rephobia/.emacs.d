@@ -40,3 +40,7 @@
 
   (setq org-agenda-archives-mode t)
   )
+
+(use-package org-download
+  :ensure t
+  )
