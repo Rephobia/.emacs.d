@@ -20,5 +20,9 @@
     (save-mark-and-excursion
       (replace-regexp doomer/from-string doomer/to-string
 		      nil (region-beginning) (region-end))))
+
   
+  (defun doomer/insert-current-date-and-time ()
+    (interactive)
+    (insert (format-time-string "%Y-%m-%d %H:%M:%S")))
   )
