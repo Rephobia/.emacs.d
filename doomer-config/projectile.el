@@ -16,7 +16,7 @@
 
 	("C-c s s" . counsel-git-grep)
 	("C-c s g" . projectile-grep)
-	("C-c x x" . doomer/run-st)
+	("C-c x x" . doomer/run-konsole)
 	("C-t" . doomer/run-vterm-toggle)
 	)
   :init
@@ -33,9 +33,22 @@
     "Try to run st in (projectile-project-root)
 if (projectile-project-rool) is nil, run st in file directory"
     (interactive)
+    (doomer/run-external-terminal "st" "-d")
+    )
+
+  (defun doomer/run-konsole ()
+    "Try to run konsole in (projectile-project-root)
+if (projectile-project-rool) is nil, run konsole in file directory"
+    (interactive)
+    (doomer/run-external-terminal "konsole" "--workdir")
+    )
+
+  (defun doomer/run-external-terminal (terminal directory-option)
+    "Try to run terminal in (projectile-project-root)
+if (projectile-project-rool) is nil, run terminal in file directory"
     (if (projectile-project-root)
-	(call-process "st" nil 0 nil "-d" (projectile-project-root))
-      (call-process "st" nil 0)
+	(call-process terminal nil 0 nil directory-option (projectile-project-root))
+      (call-process terminal nil 0)
       )
     )
 
