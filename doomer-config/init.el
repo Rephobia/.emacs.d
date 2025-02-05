@@ -167,6 +167,7 @@ that won't be remapped third party packages.")
 (load "~/.emacs.d/doomer-config/editor-config")
 (load "~/.emacs.d/doomer-config/restclient")
 (load "~/.emacs.d/doomer-config/vterm")
+(load "~/.emacs.d/doomer-config/spell-fu")
 
 ;; visual
 (load "~/.emacs.d/doomer-config/doomer-theme")
