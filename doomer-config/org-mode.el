@@ -39,8 +39,13 @@
   (setq org-startup-folded nil)
 
   (setq org-agenda-archives-mode t)
+
+  :config
+  (add-to-list 'org-link-frame-setup '(file . find-file))
   )
 
 (use-package org-download
   :ensure t
+  :config
+  (setq-default org-download-image-dir "./org-download")
   )
