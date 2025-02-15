@@ -147,7 +147,6 @@ that won't be remapped third party packages.")
 (load "~/.emacs.d/doomer-config/just-mode")
 
 ;; third-party packages
-
 (load "~/.emacs.d/doomer-config/dump-jump")
 (load "~/.emacs.d/doomer-config/org-mode")
 (load "~/.emacs.d/doomer-config/company")
