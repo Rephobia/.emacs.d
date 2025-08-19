@@ -18,6 +18,8 @@
 	("C-c s g" . projectile-grep)
 	("C-c x x" . doomer/run-konsole)
 	("C-t" . doomer/run-vterm-toggle)
+	("M-{" . projectile-previous-project-buffer)
+	("M-}" . projectile-next-project-buffer)
 	)
   :init
   
