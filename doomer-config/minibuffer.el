@@ -20,12 +20,21 @@
 	ivy-use-virtual-buffers t)
   (setq ivy-ignore-buffers '("\\` " "\\`\\*"))
   (setq minibuffer-follows-selected-frame nil)
+
   (defun sudo-find-file (file-name)
     "Like find file, but opens the file as root."
     (interactive "FSudo Find File: ")
     (let ((tramp-file-name (concat "/sudo::" (expand-file-name file-name))))
       (find-file tramp-file-name)))
-  
+
+  (defun sudo-reopen-current-file ()
+    "Reopen the current file as root, replacing the current buffer."
+    (interactive)
+    (if buffer-file-name
+	(let ((tramp-file-name (concat "/sudo::" buffer-file-name)))
+          ;; Открываем файл как root в текущем буфере
+          (find-alternate-file tramp-file-name))
+      (message "Current buffer is not visiting a file!")))
   )
 
 
