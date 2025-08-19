@@ -145,6 +145,10 @@ that won't be remapped third party packages.")
 (load "~/.emacs.d/doomer-config/yaml-mode")
 (load "~/.emacs.d/doomer-config/auctex-mode")
 (load "~/.emacs.d/doomer-config/just-mode")
+(load "~/.emacs.d/doomer-config/golang-mode.el")
+
+;; lsp
+(load "~/.emacs.d/doomer-config/lsp.el")
 
 ;; third-party packages
 (load "~/.emacs.d/doomer-config/dump-jump")
