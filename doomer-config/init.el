@@ -151,7 +151,6 @@ that won't be remapped third party packages.")
 (load "~/.emacs.d/doomer-config/lsp.el")
 
 ;; third-party packages
-(load "~/.emacs.d/doomer-config/dump-jump")
 (load "~/.emacs.d/doomer-config/org-mode")
 (load "~/.emacs.d/doomer-config/company")
 (load "~/.emacs.d/doomer-config/projectile")
