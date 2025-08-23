@@ -1,11 +1,11 @@
 (use-package doomer/text-edit
   :bind
   (:map doomer/keymap
-	("M-t c" . capitalize-dwim)
-	("M-t u" . upcase-dwim)
-	("M-t d" . downcase-dwim)
-	("M-t a" . align-regexp)
-	("M-t r" . doomer/replace-string)
+	("C-p c" . capitalize-dwim)
+	("C-p u" . upcase-dwim)
+	("C-p d" . downcase-dwim)
+	("C-p a" . align-regexp)
+	("C-p r" . doomer/replace-string)
 	)
 
   :init
